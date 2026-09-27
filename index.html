@@ -187,6 +187,7 @@ footer a{color:#8FB4CE}
   <div class="wrap">
     <h2>v2.0에서 새로 추가된 것</h2>
     <ul>
+      <li><strong>유튜브 제목 설계 공식</strong> — 같은 채널에서 조회수가 세 배 벌어진 이유</li>
       <li><strong>제출 이후 실무 전체</strong> — 크레딧 입력, 가사 등록, HyperFollow 사전 저장 페이지 구성</li>
       <li><strong>한글 가사 등록 오류 해결법</strong> — "100% uppercase letters detected" 오류의 진짜 원인과 1분 해결</li>
       <li><strong>수익 구조와 정산 일정</strong> — 언제 얼마가 들어오는지, 손익분기점은 어디인지</li>
@@ -222,15 +223,16 @@ footer a{color:#8FB4CE}
     <li><a href="#ch12"><span class="num">12</span>HyperFollow 페이지</a></li>
 
     <li class="part">Part 4 · 유튜브 연계</li>
-    <li><a href="#ch13"><span class="num">13</span>고정 댓글 설계</a></li>
-    <li><a href="#ch14"><span class="num">14</span>재생목록과 최종 화면</a></li>
-    <li><a href="#ch15"><span class="num">15</span>발매 D-Day 타임라인</a></li>
+    <li><a href="#ch13"><span class="num">13</span>유튜브 제목 설계</a></li>
+    <li><a href="#ch14"><span class="num">14</span>고정 댓글 설계</a></li>
+    <li><a href="#ch15"><span class="num">15</span>재생목록과 최종 화면</a></li>
+    <li><a href="#ch16"><span class="num">16</span>발매 D-Day 타임라인</a></li>
 
     <li class="part">Part 5 · 발매 이후</li>
-    <li><a href="#ch16"><span class="num">16</span>수익 구조의 이해</a></li>
-    <li><a href="#ch17"><span class="num">17</span>정산과 출금</a></li>
-    <li><a href="#ch18"><span class="num">18</span>공식 아티스트 채널</a></li>
-    <li><a href="#ch19"><span class="num">19</span>Social Media Pack</a></li>
+    <li><a href="#ch17"><span class="num">17</span>수익 구조의 이해</a></li>
+    <li><a href="#ch18"><span class="num">18</span>정산과 출금</a></li>
+    <li><a href="#ch19"><span class="num">19</span>공식 아티스트 채널</a></li>
+    <li><a href="#ch20"><span class="num">20</span>Social Media Pack</a></li>
 
     <li class="part">부록</li>
     <li><a href="#apA"><span class="num">A</span>트러블슈팅 사전</a></li>
@@ -449,7 +451,7 @@ footer a{color:#8FB4CE}
   <div class="box stop">
     <span class="t">첫 발매에서는 체크하지 마세요</span>
     YouTube Content ID가 포함되어 있어서, 내 유튜브 채널에 올린 MV에 저작권 클레임이 걸릴 수 있습니다.
-    왜 그런지와 예외 조건은 <a href="#ch19">19장</a>에서 따로 다룹니다. 나중에 언제든 추가할 수 있으니 지금은 넘어가세요.
+    왜 그런지와 예외 조건은 <a href="#ch20">20장</a>에서 따로 다룹니다. 나중에 언제든 추가할 수 있으니 지금은 넘어가세요.
   </div>
 
   <h4>Has this single been previously released?</h4>
@@ -606,7 +608,7 @@ footer a{color:#8FB4CE}
     <tr><td>Store Maximizer</td><td>$7.95/년</td><td>불필요 — 이미 전체 선택됨</td></tr>
     <tr><td>DistroVid Video</td><td>$99/년</td><td>불필요 — 유튜브 직접 관리</td></tr>
     <tr><td>Loudness Normalization</td><td>$2.99</td><td>불필요 — 플랫폼이 자체 조절</td></tr>
-    <tr><td>Social Media Pack</td><td class="n">$4.95/년</td><td class="n">보류 — 19장 참고</td></tr>
+    <tr><td>Social Media Pack</td><td class="n">$4.95/년</td><td class="n">보류 — 20장 참고</td></tr>
   </table></div>
 
   <h4>제출 직전 3가지</h4>
@@ -904,11 +906,133 @@ at the end of each line.</p>
 <div class="part-head">
   <p class="label">Part 4</p>
   <h2>유튜브 연계</h2>
-  <p>이미 채널이 있다면, 발매는 새로운 시작이 아니라 기존 자산을 잇는 일입니다.</p>
+  <p>이미 채널이 있다면, 발매는 새로운 시작이 아니라 기존 자산을 잇는 일입니다. 제목·댓글·재생목록 세 가지가 실제로 움직입니다.</p>
 </div>
 
 <section class="ch" id="ch13">
-  <h3><span class="n">13</span>고정 댓글 설계</h3>
+  <h3><span class="n">13</span>유튜브 제목 설계</h3>
+  <p>
+    음원은 발매했는데 아무도 듣지 않는 가장 흔한 이유는 곡이 나빠서가 아닙니다.
+    <strong>제목에서 집니다.</strong> 같은 채널, 비슷한 시기, 비슷한 품질의 곡인데도
+    제목 유형에 따라 조회수가 세 배까지 벌어졌습니다.
+  </p>
+
+  <h4>실제 데이터</h4>
+  <div class="tw"><table>
+    <tr><th>제목 유형</th><th>예시</th><th>조회수</th></tr>
+    <tr><td>시청자의 상태를 담음</td><td>쉼이 필요한 그대에게</td><td>1,365</td></tr>
+    <tr><td>시청자의 상태를 담음</td><td>인생은 모래시계야</td><td>1,400</td></tr>
+    <tr><td>곡명만</td><td>걸작</td><td class="n">512</td></tr>
+    <tr><td>곡명만</td><td>나이테</td><td class="n">440</td></tr>
+  </table></div>
+  <div class="box care">
+    <span class="t">내용 차이가 아닙니다</span>
+    위 표의 "걸작"은 평균 조회율 76%로 해당 채널 전체 1위였습니다.
+    <strong>끝까지 본 사람 비율은 가장 높은데 조회수는 최하위</strong>였다는 뜻입니다.
+    콘텐츠가 아니라 제목이 노출을 막은 것입니다.
+  </div>
+
+  <h4>제목 공식</h4>
+  <pre>곡명 | 상황 + 건네는 말  이모지  [감성 뮤직비디오]</pre>
+  <p>검증된 제목을 뜯어보면 조각마다 하는 일이 다릅니다.</p>
+  <pre>오늘도 수고했어 | 지친 하루 끝, 당신에게 건네는 한마디 🌅 [감성 뮤직비디오]
+     A                B              C                  D          E</pre>
+  <div class="tw"><table>
+    <tr><th></th><th>조각</th><th>내용</th><th>하는 일</th></tr>
+    <tr><td>A</td><td>곡명</td><td>오늘도 수고했어</td><td>검색·기억</td></tr>
+    <tr><td>B</td><td>상황</td><td>지친 하루 끝</td><td>클릭</td></tr>
+    <tr><td>C</td><td>건네는 말</td><td>당신에게 건네는 한마디</td><td><strong>담기</strong></td></tr>
+    <tr><td>D</td><td>이모지</td><td>🌅</td><td>톤 신호</td></tr>
+    <tr><td>E</td><td>카테고리</td><td>[감성 뮤직비디오]</td><td>형식 고지</td></tr>
+  </table></div>
+
+  <h4>C가 핵심인 이유</h4>
+  <p>
+    A와 B만 있으면 <strong>곡 소개</strong>입니다. C가 붙는 순간 <strong>말 걸기</strong>가 됩니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>제목 성격</th><th>시청자의 반응</th><th>행동</th></tr>
+    <tr><td>곡 소개</td><td>"이런 노래가 있구나"</td><td>한 번 듣고 나감</td></tr>
+    <tr><td>말 걸기</td><td>"나한테 하는 말이네"</td><td><strong>플레이리스트에 담음</strong></td></tr>
+  </table></div>
+  <div class="box tip">
+    <span class="t">담기가 왜 중요한가</span>
+    스트리밍에서도 유튜브에서도, 재생이 반복되는 것은 <strong>누군가의 플레이리스트에 들어갔을 때</strong>입니다.
+    한 번 듣고 나가는 조회수보다, 담기는 한 번이 훨씬 오래 갑니다.
+  </div>
+
+  <h4>작성 절차</h4>
+  <ol class="steps">
+    <li>
+      <b>B(상황)를 먼저 정한다</b>
+      곡의 주제가 아니라 <strong>듣는 사람이 처한 순간</strong>을 씁니다.
+    </li>
+    <li>
+      <b>C(건네는 말)를 고른다</b>
+      상황에 맞게 변형합니다. 이 조각이 없으면 공식이 성립하지 않습니다.
+    </li>
+    <li>
+      <b>D(이모지)를 정한다</b>
+      곡마다 다른 것을 씁니다. 🌅 위로 · 🍃 쉼 · 🌙 밤 · ☀️ 아침 · 🔥 자신감
+    </li>
+    <li>
+      <b>길이를 확인한다</b>
+      모바일은 약 40자에서 잘립니다. C까지 보여야 하므로 채널명 접미사는 붙이지 않습니다.
+    </li>
+  </ol>
+
+  <h5>B — 주제가 아니라 순간으로</h5>
+  <div class="tw"><table>
+    <tr><th>곡 주제</th><th>주제를 그대로</th><th>듣는 사람의 순간</th></tr>
+    <tr><td>쉼의 필요</td><td class="n">쉼에 대한 노래</td><td class="y">쉬지 못하고 달려온</td></tr>
+    <tr><td>위로</td><td class="n">위로의 메시지</td><td class="y">지친 하루 끝</td></tr>
+    <tr><td>그리움</td><td class="n">그리움을 담은</td><td class="y">문득 그 사람이 떠오른 밤</td></tr>
+  </table></div>
+
+  <h5>C — 상황별 변형</h5>
+  <div class="tw"><table>
+    <tr><th>건네는 말</th><th>어울리는 곡</th></tr>
+    <tr><td>당신에게 건네는 한마디</td><td>위로 · 응원</td></tr>
+    <tr><td>당신에게 들려주고 싶은 말</td><td>조언 · 격려</td></tr>
+    <tr><td>그때의 당신에게</td><td>회상 · 그리움</td></tr>
+    <tr><td>오늘의 당신에게</td><td>일상 · 현재</td></tr>
+  </table></div>
+
+  <h4>완성 검증</h4>
+  <ul class="check">
+    <li>A에 곡명이 그대로 들어갔는가 — 검색에 걸립니다</li>
+    <li>B가 주제가 아니라 상황인가 — 클릭을 만듭니다</li>
+    <li>C가 있는가 — 이게 없으면 실패입니다</li>
+    <li>모바일 40자 안에서 C까지 보이는가</li>
+    <li>채널명 접미사를 빼놓았는가</li>
+  </ul>
+
+  <h4>채널명을 붙이지 않는 이유</h4>
+  <div class="tw"><table>
+    <tr><th>문제</th><th>영향</th></tr>
+    <tr><td>길이</td><td>55자 → 60자. 모바일은 약 40자에서 잘림</td></tr>
+    <tr><td>중복</td><td>썸네일 아래 채널명이 이미 표시됨</td></tr>
+    <tr><td>잘림 위치</td><td>꼬리가 길수록 정작 클릭을 만드는 C가 밀려남</td></tr>
+  </table></div>
+  <div class="box tip">
+    <span class="t">확신이 서지 않으면 A/B 테스트</span>
+    유튜브 스튜디오에 제목 A/B 테스트 기능이 있다면, 추측 대신 데이터로 정하면 됩니다.
+    진 쪽은 자동으로 폐기되므로 위험이 거의 없습니다.
+  </div>
+
+  <h4>시리즈 곡의 경우</h4>
+  <p>
+    시리즈 제목은 브랜드 일관성 때문에 형식이 고정되어 있기 쉽습니다.
+    그런데 <code>곡명 — 📖 책이름 [시리즈 #번호]</code> 같은 형식에는
+    <strong>시청자의 상태가 한 글자도 없습니다.</strong>
+    시리즈 시그니처를 유지하면서 상황을 끼워 넣는 편이 좋습니다.
+  </p>
+  <pre>수정 전: 나이테 — 📖 아낌없이 주는 나무 🍂 [북메타포 #02] | 메타포뮤직
+수정 후: 나이테 — 부모님 생각나는 밤 📖 아낌없이 주는 나무 🍂 [북메타포 #02]</pre>
+</section>
+
+<section class="ch" id="ch14">
+  <h3><span class="n">14</span>고정 댓글 설계</h3>
   <p>
     발매 소식을 알릴 가장 좋은 자리는 <strong>조회수가 가장 많은 기존 영상의 고정 댓글</strong>입니다.
     새 영상을 만들 필요가 없고, 이미 사람이 오고 있는 곳이기 때문입니다.
@@ -936,7 +1060,7 @@ at the end of each line.</p>
     <tr><th>원칙</th><th>이유</th></tr>
     <tr><td>첫 줄을 시청자의 말로 시작</td><td>"제가 만들었습니다"가 아니라 "여러분이 만들었습니다"가 되면 홍보가 아니라 보고가 됩니다</td></tr>
     <tr><td>플랫폼 이름을 구체적으로 나열</td><td>"24개 플랫폼"만으로는 와닿지 않습니다</td></tr>
-    <tr><td>"플레이리스트에 담아주시고" 명시</td><td>담기가 실제로 채널을 살리는 행동입니다. 16장 참고</td></tr>
+    <tr><td>"플레이리스트에 담아주시고" 명시</td><td>담기가 실제로 채널을 살리는 행동입니다. 17장 참고</td></tr>
   </table></div>
   <div class="box care">
     <span class="t">중요한 정보는 앞쪽 3줄 안에</span>
@@ -967,8 +1091,8 @@ at the end of each line.</p>
 말씀해주셔서 고맙습니다. 꼭 들어주세요!</pre>
 </section>
 
-<section class="ch" id="ch14">
-  <h3><span class="n">14</span>재생목록과 최종 화면</h3>
+<section class="ch" id="ch15">
+  <h3><span class="n">15</span>재생목록과 최종 화면</h3>
 
   <h4>최종 화면으로 신곡 연결</h4>
   <p>
@@ -1020,8 +1144,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch15">
-  <h3><span class="n">15</span>발매 D-Day 타임라인</h3>
+<section class="ch" id="ch16">
+  <h3><span class="n">16</span>발매 D-Day 타임라인</h3>
   <p>순서가 중요합니다. 가사는 반영에 1~2주가 걸리므로 가장 먼저 해야 합니다.</p>
 
   <div class="tl">
@@ -1047,8 +1171,8 @@ at the end of each line.</p>
   <p>돈은 언제 들어오는지, 다음에 무엇을 해야 하는지.</p>
 </div>
 
-<section class="ch" id="ch16">
-  <h3><span class="n">16</span>수익 구조의 이해</h3>
+<section class="ch" id="ch17">
+  <h3><span class="n">17</span>수익 구조의 이해</h3>
   <p>음원 수익은 하나가 아니라 세 갈래입니다. 자동으로 들어오는 건 첫 번째뿐입니다.</p>
 
   <div class="tw"><table>
@@ -1099,7 +1223,7 @@ at the end of each line.</p>
   <h4>③ UGC 수익</h4>
   <p>
     다른 사람이 내 곡을 쓴 영상에서 발생하는 광고 수익입니다.
-    Social Media Pack에 가입해야 받을 수 있고, 주의할 점이 많아 <a href="#ch19">19장</a>에서 따로 다룹니다.
+    Social Media Pack에 가입해야 받을 수 있고, 주의할 점이 많아 <a href="#ch20">20장</a>에서 따로 다룹니다.
   </p>
 
   <h4>발매의 진짜 가치</h4>
@@ -1115,8 +1239,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch17">
-  <h3><span class="n">17</span>정산과 출금</h3>
+<section class="ch" id="ch18">
+  <h3><span class="n">18</span>정산과 출금</h3>
 
   <h4>2~3개월 지연이 정상입니다</h4>
   <p>
@@ -1172,8 +1296,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch18">
-  <h3><span class="n">18</span>공식 아티스트 채널 (OAC)</h3>
+<section class="ch" id="ch19">
+  <h3><span class="n">19</span>공식 아티스트 채널 (OAC)</h3>
   <p>
     유튜브에서 내 채널을 <strong>공식 아티스트 채널</strong>로 인증받는 절차입니다.
     DistroKid 모든 요금제에 포함되어 있어 <strong>추가 비용이 없습니다.</strong>
@@ -1221,8 +1345,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch19">
-  <h3><span class="n">19</span>Social Media Pack 재검토</h3>
+<section class="ch" id="ch20">
+  <h3><span class="n">20</span>Social Media Pack 재검토</h3>
   <p>
     업로드 단계에서 건너뛰라고 했던 옵션입니다. 왜 그런지, 예외는 있는지 여기서 정리합니다.
   </p>
