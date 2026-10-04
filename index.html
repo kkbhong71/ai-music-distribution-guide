@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI 음원 발매 실전 가이드 v2.0 — Suno AI × DistroKid</title>
+<title>AI 음원 발매 실전 가이드 v3.0 — Suno AI × DistroKid</title>
 <meta name="description" content="Suno AI로 만든 음악을 DistroKid로 스포티파이·애플뮤직·유튜브뮤직에 발매하는 전 과정. 가입부터 가사 등록 오류 해결, 수익 정산까지 실제 경험 기반 매뉴얼.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
 *,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:24px}
+html{scroll-behavior:smooth;scroll-padding-top:28px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   margin:0;background:var(--paper);color:var(--ink);
@@ -66,8 +66,18 @@ img{max-width:100%}
 .changelog li::marker{color:var(--blue)}
 
 /* ---------- 목차 ---------- */
-.toc{position:sticky;top:20px;padding:34px 0 40px;font-size:14px;line-height:1.6}
-@media (max-width:900px){.toc{position:static;padding:30px 0 10px}}
+.toc{
+  position:sticky;top:20px;padding:34px 0 40px;font-size:14px;line-height:1.6;
+  max-height:calc(100vh - 40px);overflow-y:auto;overscroll-behavior:contain;
+  padding-right:10px;scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent;
+}
+.toc::-webkit-scrollbar{width:7px}
+.toc::-webkit-scrollbar-track{background:transparent}
+.toc::-webkit-scrollbar-thumb{background:var(--rule);border-radius:4px}
+.toc:hover::-webkit-scrollbar-thumb{background:var(--rule-strong)}
+@media (max-width:900px){
+  .toc{position:static;padding:30px 0 10px;max-height:none;overflow:visible;padding-right:0}
+}
 .toc h2{font-family:var(--sans);font-size:12px;font-weight:700;color:var(--ink-faint);letter-spacing:.1em;margin:0 0 16px}
 .toc ol{list-style:none;margin:0;padding:0}
 .toc .part{font-size:12px;font-weight:700;color:var(--blue);margin:20px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--rule)}
@@ -305,13 +315,26 @@ footer a{color:#8FB4CE}
 
   <h4>국내 플랫폼에 대한 현실적인 판단</h4>
   <p>
-    멜론·지니·플로 같은 국내 플랫폼은 AI 음원 심사가 까다롭습니다. DistroKid를 통해 전달은 되지만
-    반려될 수 있고, 한국음악저작권협회(KOMCA)의 AI 음악 저작권 등록 기준도 계속 바뀌는 중입니다.
+    여기서 가장 많이 오해하는 부분입니다. <strong>DistroKid로는 멜론·지니·벅스에 음원이 올라가지 않습니다.</strong>
+    DistroKid의 국내 파트너는 <strong>FLO(플로) 하나뿐</strong>입니다. 2022년 9월부터 연결되어 있습니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>플랫폼</th><th>DistroKid 유통</th><th>비고</th></tr>
+    <tr><td>FLO (플로)</td><td>가능</td><td>국내 유일 파트너</td></tr>
+    <tr><td>멜론 · 지니 · 벅스</td><td>불가</td><td>국내 유통사를 따로 거쳐야 함</td></tr>
+  </table></div>
+  <p>
+    멜론·지니에 올리려면 사운드리퍼블리카·포크라노스·카카오엔터 같은 <strong>국내 유통사를 별도로</strong> 이용해야 합니다.
+    해외는 DistroKid, 국내는 국내 유통사 — 이중 구조입니다.
+  </p>
+  <p>
+    다만 국내 유통사를 쓰더라도 장벽이 하나 더 있습니다. 국내 플랫폼은 AI 생성 음원의 유입을 까다롭게 통제하고 있어
+    심사에서 반려될 가능성이 있고, 한국음악저작권협회(KOMCA)는 AI가 주도적으로 만든 음악의 저작권 등록을 허용하지 않고 있습니다.
   </p>
   <div class="box tip">
     <span class="t">현실적인 목표</span>
-    처음에는 글로벌 플랫폼(스포티파이·애플뮤직·유튜브뮤직)에 집중하세요.
-    국내 등록 가능 여부는 발매 후 실제 반영 결과를 보고 판단하는 편이 낫습니다.
+    처음에는 글로벌 플랫폼(스포티파이·애플뮤직·유튜브뮤직)과 FLO에 집중하세요.
+    멜론·지니 진입은 국내 유통사에 <strong>사전 문의로 가능 여부부터</strong> 확인한 뒤 판단하는 편이 안전합니다.
     KOMCA 등록 가능 여부가 궁금하다면 협회에 직접 문의하는 것이 가장 정확합니다.
   </div>
 </section>
@@ -1049,7 +1072,7 @@ at the end of each line.</p>
 
 〈곡명〉이 ○월 ○일, 24개 스트리밍 플랫폼에 정식 발매됩니다.
 
-멜론, 스포티파이, 애플뮤직, 유튜브뮤직 등에서 만나실 수 있어요.
+스포티파이, 애플뮤직, 유튜브뮤직, FLO 등에서 만나실 수 있어요.
 ▶ 미리 저장하기 (스포티파이) 👉
 (HyperFollow 링크)
 
@@ -1078,7 +1101,7 @@ at the end of each line.</p>
 
 ▶ 듣기: (동일한 HyperFollow 링크)
 
-멜론 · 스포티파이 · 애플뮤직 · 유튜브뮤직 · 지니 · 벅스 외 24개 플랫폼
+스포티파이 · 애플뮤직 · 유튜브뮤직 · FLO · 아마존뮤직 외 20여 개 플랫폼
 
 "음원으로 나오면 좋겠다"는 댓글 하나에서 시작된 일입니다.
 플레이리스트에 담아주시면, 그것만으로 큰 힘이 됩니다. 🍃</pre>
@@ -1190,7 +1213,8 @@ at the end of each line.</p>
     <tr><td>스포티파이</td><td>발매일 당일 (시간 차 있음)</td></tr>
     <tr><td>애플뮤직</td><td>당일 ~ 1일</td></tr>
     <tr><td>유튜브뮤직</td><td>1 ~ 3일</td></tr>
-    <tr><td>국내 플랫폼 (멜론·지니)</td><td>수일 ~ 수주, 반려 가능성도 있음</td></tr>
+    <tr><td>FLO (국내 유일)</td><td>수일 ~ 1주</td></tr>
+    <tr><td>멜론 · 지니 · 벅스</td><td>해당 없음 — DistroKid 유통 대상이 아님 (2장 참고)</td></tr>
   </table></div>
   <div class="box care">
     <span class="t">2~3일은 정상 범위입니다</span>
@@ -1323,7 +1347,7 @@ at the end of each line.</p>
   <p>
     스포티파이 트랙 링크를 직접 거는 방법도 있지만,
     HyperFollow는 <strong>모든 플랫폼을 한 페이지에서</strong> 고르게 해줍니다.
-    멜론·애플뮤직을 쓰는 사람도 거기서 바로 넘어갈 수 있습니다.
+    애플뮤직·유튜브뮤직·FLO를 쓰는 사람도 거기서 바로 넘어갈 수 있습니다.
   </p>
   <p>
     플랫폼마다 반영 속도가 다르므로, <strong>HyperFollow + 스포티파이 직접 링크</strong>를
@@ -1605,7 +1629,8 @@ at the end of each line.</p>
   <div class="tw"><table>
     <tr><th>플랫폼</th><th>재생 1회당 (참고치)</th></tr>
     <tr><td>스포티파이</td><td>약 $0.003~0.005 (4~7원)</td></tr>
-    <tr><td>멜론</td><td>약 5~7원</td></tr>
+    <tr><td>애플뮤직</td><td>약 $0.007~0.01 (10~14원)</td></tr>
+    <tr><td>유튜브뮤직</td><td>약 $0.002 내외 (3원 안팎)</td></tr>
   </table></div>
   <div class="box care">
     <span class="t">단가는 고정값이 아닙니다</span>
@@ -1946,8 +1971,13 @@ and not added after upload from an audio library within the platform.</pre>
   <h4>커버 아트에 '싱글' 표시를 넣어야 하나요?</h4>
   <p>넣을 필요 없습니다. Single/EP/Album은 메타데이터로 결정되고, 플랫폼이 자동으로 표시합니다.</p>
 
-  <h4>국내 플랫폼에도 올라가나요?</h4>
-  <p>DistroKid가 전달은 하지만 AI 음원은 심사에서 반려될 수 있습니다. 실제 반영 여부는 발매 후 각 플랫폼에서 직접 검색해 확인하세요.</p>
+  <h4>멜론에도 올라가나요?</h4>
+  <p>올라가지 않습니다. DistroKid의 국내 파트너는 <strong>FLO 하나뿐</strong>이고, 멜론·지니·벅스는 국내 유통사를 따로 거쳐야 합니다. 게다가 국내 플랫폼은 AI 음원 심사가 까다로워 반려될 수 있습니다. 자세한 내용은 2장을 보세요.</p>
+  <div class="box care">
+    <span class="t">고정 댓글에 플랫폼을 쓸 때 주의</span>
+    "멜론에서도 들으실 수 있어요"라고 안내하면, 멜론 이용자가 검색했다가 찾지 못하고 돌아섭니다.
+    실제 입점된 곳만 쓰거나, HyperFollow 링크 하나만 거는 편이 안전합니다.
+  </div>
 
   <h4>가사를 등록했는데 발매일에 안 보입니다</h4>
   <p>정상입니다. 반영까지 영업일 기준 1~2주가 걸립니다. 2주가 지나도 안 보이면 형식 문제일 수 있으니 고객센터에 문의하세요.</p>
