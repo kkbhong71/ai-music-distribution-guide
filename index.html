@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI 음원 발매 실전 가이드 v3.2 — Suno AI × DistroKid</title>
-<meta name="description" content="Suno AI로 만든 음악을 DistroKid로 스포티파이·애플뮤직·유튜브뮤직에 발매하는 전 과정. 가입부터 가사 등록 오류 해결, 수익 정산까지 실제 경험 기반 매뉴얼.">
+<title>AI 음원 발매 실전 가이드 v4.0 — Suno AI × DistroKid</title>
+<meta name="description" content="Suno AI로 만든 음악을 DistroKid로 스포티파이·애플뮤직·유튜브뮤직에 발매하는 전 과정. 전체 흐름도, 발매용 마스터링, 커버아트 제작, 업로드 양식 항목별 입력값, 오류 해결, 수익 정산까지 실제 발매 2회 경험 기반 매뉴얼.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -172,6 +172,27 @@ footer a{color:#8FB4CE}
 .totop{display:inline-block;margin-top:22px;padding:9px 18px;border:1px solid #3C5670;border-radius:3px;color:#B8CBDA;text-decoration:none;font-size:13.5px}
 .totop:hover,.totop:focus-visible{background:#1E2F3F;color:#fff}
 :focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* ---------- 전체 흐름도 ---------- */
+.flow{margin:0 0 30px}
+.flow .fstep{background:var(--card);border:1px solid var(--rule);border-left:5px solid var(--blue);border-radius:4px;padding:20px 22px;position:relative}
+.flow .fstep h4{margin:0 0 10px;padding:0;border:none;font-size:18px;display:flex;align-items:baseline;gap:11px}
+.flow .fstep h4 .s{flex:none;font-family:var(--mono);font-size:12px;font-weight:500;color:#fff;background:var(--blue);padding:3px 9px;border-radius:3px}
+.flow .fstep .doing{margin:0 0 12px;font-size:15px;color:var(--ink-soft);line-height:1.8}
+.flow .fstep .doing b{color:var(--ink);font-weight:500}
+.flow .meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;font-family:var(--mono)}
+.flow .meta span{background:#EDF1F5;color:var(--ink-soft);padding:3px 9px;border-radius:3px}
+.flow .meta a{background:var(--blue-soft);color:var(--blue);padding:3px 9px;border-radius:3px;text-decoration:none}
+.flow .meta a:hover{background:var(--blue);color:#fff}
+.flow .meta .lock{background:var(--warn-soft);color:var(--warn)}
+.flow .arrow{text-align:center;color:var(--rule-strong);font-size:22px;line-height:1;margin:9px 0}
+.flow .fstep.fin{border-left-color:var(--ok)}
+.flow .fstep.fin h4 .s{background:var(--ok)}
+.minpath{background:var(--blue-soft);border:1px solid #C6DAE8;border-radius:4px;padding:20px 22px;margin:0 0 20px}
+.minpath h4{margin:0 0 10px;padding:0;border:none;font-size:16px;color:var(--blue)}
+.minpath .route{font-family:var(--mono);font-size:13.5px;line-height:2.1;color:var(--ink-soft);word-break:keep-all}
+.minpath .route a{text-decoration:none;font-weight:500}
+
 </style>
 </head>
 <body>
@@ -179,7 +200,7 @@ footer a{color:#8FB4CE}
 <header class="hero">
   <div class="wrap">
     <p class="kicker">AI 음악 크리에이터를 위한</p>
-    <h1>음원 발매 실전 가이드<span class="ver">v3.2</span></h1>
+    <h1>음원 발매 실전 가이드<span class="ver">v4.0</span></h1>
     <p class="sub">Suno AI × DistroKid로 스트리밍 플랫폼에 내 노래 올리기</p>
     <p class="lede">
       Suno AI로 만든 음악을 DistroKid를 통해 스포티파이·애플뮤직·유튜브뮤직에 정식 발매하는 전 과정을,
@@ -188,24 +209,42 @@ footer a{color:#8FB4CE}
     </p>
     <p class="by">
       작성: <strong>K.G.B.</strong> (Creative Director, 메타포뮤직)<br>
-      Oseong Vibe Coding EduHub · 2026년 10월
+      Oseong Vibe Coding EduHub · 2026년 10월 개정
     </p>
   </div>
 </header>
 
 <div class="changelog">
   <div class="wrap">
-    <h2>v3.2에서 새로 추가된 것</h2>
+    <h2>v4.0에서 새로 추가된 것</h2>
     <ul>
-      <li><strong>카탈로그 발매 전략 (27장)</strong> — 곡이 쌓였을 때 싱글과 앨범을 어떻게 나눌 것인가</li>
+      <li><strong>전체 흐름도</strong> — 다섯 단계로 압축한 발매 과정. 각 단계의 소요 시간, 해당 챕터, 되돌리기 가능 여부를 한 화면에 담았습니다. 처음이라면 최소 경로만 따라가도 발매됩니다</li>
+      <li><strong>발매용 오디오 만들기 (3장)</strong> — Suno Remaster 기능, 측정 지표 읽는 법, 표준 공정 3단계, 무료 마스터링 도구 비교. <b>측정해서 더 나을 때만 처리한다</b>는 원칙을 세웠습니다</li>
+      <li><strong>커버아트 만들기 (4장)</strong> — 썸네일에서 살아남는 조건, 크롭과 1:1 생성의 정보량 차이, 커버 전용 프롬프트 설계법, 2단계 업스케일</li>
+      <li><strong>두 번째 발매 대조표 (부록 E)</strong> — 1집과 반드시 일치시켜야 할 것과 반드시 달라야 할 것</li>
+      <li><strong>ISRC 전반</strong> — 입력 칸을 비워야 하는 이유, 확인 위치, 처리 지연, 재수록 시 재사용 규칙</li>
+      <li><strong>Apple 크레딧은 제출 차단 요인</strong> — 비워두면 Validation Error로 막힙니다. 역할 드롭다운 찾는 법 포함</li>
+      <li><strong>크레딧 수정 방법 — 기존 서술을 정정했습니다</strong> — "우회할 방법이 없다"고 적었던 부분이 틀렸습니다. <b>추가 후 삭제</b> 순서면 통과합니다. 이름 철자를 고칠 때 반드시 필요한 절차입니다</li>
+      <li><strong>크레딧 이름 철자 통일</strong> — 한 글자만 달라도 작업자 페이지가 분리됩니다. Import credits 기능으로 해결</li>
+      <li><strong>Validation Error 2종 (부록 A)</strong> — 중복 제목 오류는 이미 제출에 성공했다는 신호입니다. 삭제하면 안 됩니다</li>
+      <li><strong>Release time · Time synchronization</strong> — 전 세계 동시 공개를 고르면 한국은 오후에 열립니다</li>
+      <li><strong>두 번째 발매부터의 화면 차이 (7장)</strong> — 플랫폼이 기존 프로필을 자동 인식합니다</li>
+      <li><strong>Suno 다운로드 한도와 라이선스 (2장)</strong> — 묶음 발매 일정에 직접 영향을 줍니다</li>
+      <li><strong>Cancel single · Edit Release</strong> — 처리 중 화면에서 누르면 안 되는 것과 써도 되는 것</li>
+      <li>DistroVid 가격 표기를 화면 기준으로 정정했습니다</li>
+    </ul>
+
+    <h2>v3.2에서 추가된 것</h2>
+    <ul>
+      <li><strong>카탈로그 발매 전략 (29장)</strong> — 곡이 쌓였을 때 싱글과 앨범을 어떻게 나눌 것인가</li>
       <li><strong>스포티파이 스팸 필터</strong> — 쌓아둔 곡을 한꺼번에 쏟아내면 안 되는 이유</li>
-      <li><strong>1,000회 문턱 (23장)</strong> — 재생이 분산되면 전부 0원이 되는 구조. 기존 손익분기 설명을 교정했습니다</li>
+      <li><strong>1,000회 문턱 (25장)</strong> — 재생이 분산되면 전부 0원이 되는 구조. 기존 손익분기 설명을 교정했습니다</li>
     </ul>
 
     <h2>v3.1에서 추가된 것</h2>
     <ul>
-      <li><strong>Canvas 만들기 (22장)</strong> — 사양, 루프 방식, CapCut 제작 순서, 음소거, 업로드까지</li>
-      <li><strong>곡 단위 통계 읽기 (21장)</strong> — LIVE 수치와 기간 통계가 다르게 보이는 이유</li>
+      <li><strong>Canvas 만들기 (24장)</strong> — 사양, 루프 방식, CapCut 제작 순서, 음소거, 업로드까지</li>
+      <li><strong>곡 단위 통계 읽기 (23장)</strong> — LIVE 수치와 기간 통계가 다르게 보이는 이유</li>
       <li><strong>국내 플랫폼 서술 전면 수정</strong> — DistroKid의 국내 파트너는 FLO 하나입니다. 멜론·지니·벅스는 유통 대상이 아닙니다</li>
       <li><strong>고정 댓글 플랫폼 표기 교정</strong> — 입점하지 않은 플랫폼을 안내하면 역효과가 납니다</li>
     </ul>
@@ -230,56 +269,161 @@ footer a{color:#8FB4CE}
 <nav class="toc" aria-label="목차">
   <h2>목차</h2>
   <ol>
+    <li class="part">개요</li>
+    <li><a href="#flow"><span class="num">&#9679;</span>한눈에 보는 발매 전 과정</a></li>
+
     <li class="part">Part 1 · 시작 전에</li>
     <li><a href="#ch1"><span class="num">01</span>음원 발매란 무엇인가</a></li>
     <li><a href="#ch2"><span class="num">02</span>준비물 체크리스트</a></li>
+    <li><a href="#ch3"><span class="num">03</span>발매용 오디오 만들기</a></li>
+    <li><a href="#ch4"><span class="num">04</span>커버아트 만들기</a></li>
 
     <li class="part">Part 2 · 계정과 업로드</li>
-    <li><a href="#ch3"><span class="num">03</span>DistroKid 가입</a></li>
-    <li><a href="#ch4"><span class="num">04</span>아티스트 프로필 설정</a></li>
-    <li><a href="#ch5"><span class="num">05</span>업로드 — 기본 설정</a></li>
-    <li><a href="#ch6"><span class="num">06</span>업로드 — 트랙 정보</a></li>
-    <li><a href="#ch7"><span class="num">07</span>AI 고지 설정</a></li>
-    <li><a href="#ch8"><span class="num">08</span>최종 확인 및 제출</a></li>
+    <li><a href="#ch5"><span class="num">05</span>DistroKid 가입</a></li>
+    <li><a href="#ch6"><span class="num">06</span>아티스트 프로필 설정</a></li>
+    <li><a href="#ch7"><span class="num">07</span>업로드 — 기본 설정</a></li>
+    <li><a href="#ch8"><span class="num">08</span>업로드 — 트랙 정보</a></li>
+    <li><a href="#ch9"><span class="num">09</span>AI 고지 설정</a></li>
+    <li><a href="#ch10"><span class="num">10</span>최종 확인 및 제출</a></li>
 
     <li class="part">Part 3 · 제출 직후 실무</li>
-    <li><a href="#ch9"><span class="num">09</span>발매작 상세 화면 읽기</a></li>
-    <li><a href="#ch10"><span class="num">10</span>크레딧 입력</a></li>
-    <li><a href="#ch11"><span class="num">11</span>가사 등록</a></li>
-    <li><a href="#ch12"><span class="num">12</span>HyperFollow 페이지</a></li>
+    <li><a href="#ch11"><span class="num">11</span>발매작 상세 화면 읽기</a></li>
+    <li><a href="#ch12"><span class="num">12</span>크레딧 입력</a></li>
+    <li><a href="#ch13"><span class="num">13</span>가사 등록</a></li>
+    <li><a href="#ch14"><span class="num">14</span>HyperFollow 페이지</a></li>
 
     <li class="part">Part 4 · 유튜브 연계</li>
-    <li><a href="#ch13"><span class="num">13</span>유튜브 제목 설계</a></li>
-    <li><a href="#ch14"><span class="num">14</span>고정 댓글 설계</a></li>
-    <li><a href="#ch15"><span class="num">15</span>재생목록과 최종 화면</a></li>
-    <li><a href="#ch16"><span class="num">16</span>발매 D-Day 타임라인</a></li>
+    <li><a href="#ch15"><span class="num">15</span>유튜브 제목 설계</a></li>
+    <li><a href="#ch16"><span class="num">16</span>고정 댓글 설계</a></li>
+    <li><a href="#ch17"><span class="num">17</span>재생목록과 최종 화면</a></li>
+    <li><a href="#ch18"><span class="num">18</span>발매 D-Day 타임라인</a></li>
 
     <li class="part">Part 5 · 발매 당일</li>
-    <li><a href="#ch17"><span class="num">17</span>발매 확인하기</a></li>
-    <li><a href="#ch18"><span class="num">18</span>발매 당일 유튜브 작업</a></li>
-    <li><a href="#ch19"><span class="num">19</span>Spotify for Artists 신청</a></li>
-    <li><a href="#ch20"><span class="num">20</span>아티스트 프로필 세팅</a></li>
-    <li><a href="#ch21"><span class="num">21</span>곡 단위 통계 읽기</a></li>
-    <li><a href="#ch22"><span class="num">22</span>Canvas 만들기</a></li>
+    <li><a href="#ch19"><span class="num">19</span>발매 확인하기</a></li>
+    <li><a href="#ch20"><span class="num">20</span>발매 당일 유튜브 작업</a></li>
+    <li><a href="#ch21"><span class="num">21</span>Spotify for Artists 신청</a></li>
+    <li><a href="#ch22"><span class="num">22</span>아티스트 프로필 세팅</a></li>
+    <li><a href="#ch23"><span class="num">23</span>곡 단위 통계 읽기</a></li>
+    <li><a href="#ch24"><span class="num">24</span>Canvas 만들기</a></li>
 
     <li class="part">Part 6 · 발매 이후</li>
-    <li><a href="#ch23"><span class="num">23</span>수익 구조의 이해</a></li>
-    <li><a href="#ch24"><span class="num">24</span>정산과 출금</a></li>
-    <li><a href="#ch25"><span class="num">25</span>공식 아티스트 채널</a></li>
-    <li><a href="#ch26"><span class="num">26</span>Social Media Pack</a></li>
-    <li><a href="#ch27"><span class="num">27</span>카탈로그 발매 전략</a></li>
+    <li><a href="#ch25"><span class="num">25</span>수익 구조의 이해</a></li>
+    <li><a href="#ch26"><span class="num">26</span>정산과 출금</a></li>
+    <li><a href="#ch27"><span class="num">27</span>공식 아티스트 채널</a></li>
+    <li><a href="#ch28"><span class="num">28</span>Social Media Pack</a></li>
+    <li><a href="#ch29"><span class="num">29</span>카탈로그 발매 전략</a></li>
 
     <li class="part">부록</li>
     <li><a href="#apA"><span class="num">A</span>트러블슈팅 사전</a></li>
     <li><a href="#apB"><span class="num">B</span>자주 묻는 질문</a></li>
     <li><a href="#apC"><span class="num">C</span>메타데이터 요약표</a></li>
     <li><a href="#apD"><span class="num">D</span>전체 체크리스트</a></li>
+    <li><a href="#apE"><span class="num">E</span>두 번째 발매 대조표</a></li>
   </ol>
 </nav>
 
 <main>
 
 <!-- ══════════ PART 1 ══════════ -->
+<section class="ch" id="flow">
+  <h3>한눈에 보는 발매 전 과정</h3>
+  <p>
+    처음 발매하시는 분은 전체 그림부터 보고 가세요. 아래 다섯 단계가 전부입니다.
+    각 단계의 챕터 번호를 누르면 해당 설명으로 바로 이동합니다.
+  </p>
+
+  <div class="flow">
+
+    <div class="fstep">
+      <h4><span class="s">STEP 1</span>곡 준비</h4>
+      <p class="doing">
+        Suno에서 <b>WAV</b>를 받고, 음량을 측정한 뒤 발매용으로 다듬습니다.
+        그다음 <b>3,000×3,000px 커버</b>를 만듭니다. 가사 클린 버전도 여기서 준비합니다.
+      </p>
+      <div class="meta">
+        <span>반나절</span><a href="#ch2">2장</a><a href="#ch3">3장</a><a href="#ch4">4장</a>
+        <span>되돌리기 쉬움</span>
+      </div>
+    </div>
+    <div class="arrow">&#9660;</div>
+
+    <div class="fstep">
+      <h4><span class="s">STEP 2</span>업로드와 제출</h4>
+      <p class="doing">
+        DistroKid에 가입하고 양식을 채웁니다. <b>AI 고지</b>와 <b>크레딧</b>이 핵심이고,
+        부가 옵션(Extras)은 전부 끈 채로 제출합니다.
+      </p>
+      <div class="meta">
+        <span>1시간</span><a href="#ch5">5장</a><a href="#ch6">6장</a><a href="#ch7">7장</a>
+        <a href="#ch8">8장</a><a href="#ch9">9장</a><a href="#ch10">10장</a>
+        <span class="lock">제출 후 일부 수정 불가</span>
+      </div>
+    </div>
+    <div class="arrow">&#9660;</div>
+
+    <div class="fstep">
+      <h4><span class="s">STEP 3</span>제출 직후 ~ 발매 전 (D-14 ~ D-3)</h4>
+      <p class="doing">
+        <b>ISRC를 기록</b>하고, 가사를 등록하고, 사전 저장 페이지를 꾸미고, 유튜브에 예고합니다.
+        대부분의 가이드가 다루지 않는 구간인데 실제로 시간이 가장 많이 듭니다.
+      </p>
+      <div class="meta">
+        <span>2시간</span><a href="#ch11">11장</a><a href="#ch12">12장</a><a href="#ch13">13장</a>
+        <a href="#ch14">14장</a><a href="#ch15">15장</a><a href="#ch16">16장</a><a href="#ch17">17장</a>
+        <a href="#ch18">18장</a>
+        <span>수정 가능</span>
+      </div>
+    </div>
+    <div class="arrow">&#9660;</div>
+
+    <div class="fstep">
+      <h4><span class="s">STEP 4</span>발매일 당일</h4>
+      <p class="doing">
+        각 플랫폼에 올라왔는지 확인하고, 유튜브 설명문과 고정 댓글을 교체하고,
+        <b>Spotify for Artists</b>를 신청합니다.
+      </p>
+      <div class="meta">
+        <span>반나절</span><a href="#ch19">19장</a><a href="#ch20">20장</a><a href="#ch21">21장</a>
+        <a href="#ch22">22장</a><a href="#ch23">23장</a><a href="#ch24">24장</a>
+      </div>
+    </div>
+    <div class="arrow">&#9660;</div>
+
+    <div class="fstep fin">
+      <h4><span class="s">STEP 5</span>발매 이후</h4>
+      <p class="doing">
+        수익이 어떻게 쌓이는지 이해하고, 공식 아티스트 채널을 연결하고,
+        다음 발매를 싱글로 낼지 묶음으로 낼지 설계합니다.
+      </p>
+      <div class="meta">
+        <span>지속</span><a href="#ch25">25장</a><a href="#ch26">26장</a><a href="#ch27">27장</a>
+        <a href="#ch28">28장</a><a href="#ch29">29장</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="minpath">
+    <h4>처음이신가요? 이것만 따라가도 발매됩니다</h4>
+    <p class="route">
+      <a href="#ch2">2장 준비물</a> &rarr; <a href="#ch3">3장 오디오</a> &rarr;
+      <a href="#ch4">4장 커버</a> &rarr; <a href="#ch5">5~10장 업로드</a> &rarr;
+      <a href="#ch11">11장 ISRC 기록</a> &rarr; <a href="#ch13">13장 가사</a> &rarr;
+      <a href="#ch19">19장 발매 확인</a>
+    </p>
+    <p style="margin:12px 0 0;font-size:14.5px;color:var(--ink-soft)">
+      나머지 챕터는 "더 잘하기 위한" 내용입니다. 첫 곡은 위 경로만으로 충분하고,
+      두 번째 발매부터 하나씩 늘려가시면 됩니다.
+    </p>
+  </div>
+
+  <div class="box care">
+    <b>두 번째 발매부터는</b> 1집과 반드시 일치시켜야 하는 항목들이 있습니다.
+    아티스트명·레이블명·크레딧 이름 철자가 한 글자라도 다르면 플랫폼이 다른 사람으로 인식합니다.
+    <a href="#apE">부록 E</a>에 대조표를 따로 두었습니다.
+  </div>
+</section>
+
 <div class="part-head">
   <p class="label">Part 1</p>
   <h2>시작 전에</h2>
@@ -394,7 +538,7 @@ footer a{color:#8FB4CE}
   <h4>③ 가사 클린 버전</h4>
   <p>
     Suno에 넣었던 구조 태그를 모두 지운 순수 가사를 준비합니다.
-    이 파일은 나중에 <a href="#ch11">11장 가사 등록</a>에서 그대로 씁니다.
+    이 파일은 나중에 <a href="#ch13">13장 가사 등록</a>에서 그대로 씁니다.
   </p>
   <div class="tw"><table>
     <tr><th>지울 것</th><th>예시</th></tr>
@@ -406,7 +550,7 @@ footer a{color:#8FB4CE}
   <div class="box stop">
     <span class="t">한글 가사라면 라틴 문자도 미리 바꾸세요</span>
     <code>TV</code> <code>SNS</code> <code>OK</code> 같은 영문 표기가 가사에 남아 있으면
-    등록 단계에서 오류가 납니다. 이유와 해결은 <a href="#ch11">11장</a>에 자세히 적었습니다.
+    등록 단계에서 오류가 납니다. 이유와 해결은 <a href="#ch13">13장</a>에 자세히 적었습니다.
     작사 단계에서 한글로 써두면 애초에 겪지 않습니다.
   </div>
 
@@ -415,6 +559,18 @@ footer a{color:#8FB4CE}
     작사·작곡 크레딧에는 활동명이 아니라 <strong>본명</strong>을 영문으로 입력해야 합니다.
     예명으로 넣으면 반려될 수 있습니다. 여권 표기와 같은 철자를 쓰는 것이 안전합니다.
   </p>
+
+  <div class="box care">
+    <span class="t">Suno 다운로드 한도와 라이선스</span>
+    2026년 9월 3일부터 Pro 월 20곡, Premier 월 60곡 제한이 적용됩니다(이전 생성곡 포함).
+    같은 곡을 다른 포맷으로 다시 받는 것은 차감되지 않으므로, MP3만 받아둔 곡의 WAV 재다운로드는 괜찮습니다.<br>
+    <b>무료 플랜에서 만든 곡은 비상업용이라 발매할 수 없습니다.</b>
+    유료 플랜 생성곡만 가능하고, 구독을 해지해도 상업 라이선스는 유지됩니다.
+  </div>
+  <div class="box tip">
+    이 장은 "무엇이 필요한가"까지입니다. <b>어떻게 만드는가</b>는
+    <a href="#ch3">3장(오디오)</a>과 <a href="#ch4">4장(커버아트)</a>에서 다룹니다.
+  </div>
 
   <h4>업로드 전 최종 확인</h4>
   <ul class="check">
@@ -426,6 +582,278 @@ footer a{color:#8FB4CE}
   </ul>
 </section>
 
+<section class="ch" id="ch3">
+  <h3><span class="n">3</span>발매용 오디오 만들기</h3>
+
+  <p>
+    Suno에서 받은 WAV를 그대로 올려도 발매는 됩니다. 다만 두 가지는 반드시 확인하고 넘어가세요.
+    <b>엔딩 처리</b>와 <b>음량</b>입니다. 이 장은 측정 &rarr; 판단 &rarr; 처리 순으로 진행합니다.
+  </p>
+
+  <h4>① Suno에서 WAV 받기</h4>
+  <p>라이브러리에서 다운로드할 때 포맷을 고를 수 있습니다. 반드시 WAV를 선택하세요.</p>
+
+  <div class="box care">
+    <b>다운로드 한도가 있습니다 (2026년 9월 3일부터)</b><br>
+    Pro는 월 20곡, Premier는 월 60곡으로 제한됩니다. 그 이전에 만든 곡에도 적용됩니다.
+    다만 <b>같은 곡을 다른 포맷으로 다시 받는 것과 스템 다운로드는 추가 차감되지 않습니다.</b><br>
+    MV 제작 때 MP3만 받아둔 곡을 발매용 WAV로 다시 받으려는 경우가 여기 해당합니다.
+    여러 곡을 묶어 앨범을 낼 계획이라면 작업 전에 잔여 한도를 먼저 확인하세요.
+  </div>
+
+  <div class="box stop">
+    <b>발매할 수 없는 곡</b><br>
+    무료 플랜에서 만든 곡은 비상업용이라 발매할 수 없습니다. 유료 플랜 생성곡만 가능하며,
+    구독을 해지해도 상업 라이선스는 유지됩니다.
+    Remix 기능으로 만든 결과물은 유료 플랜이어도 비상업용이라는 해석이 있어 발매 목록에서 빼는 편이 안전합니다.
+  </div>
+
+  <h4>② Remaster 기능 — 써야 할까</h4>
+  <p>
+    Suno의 Remaster는 이름과 달리 <b>마스터링이 아니라 재생성</b>입니다.
+    기존 파일을 가공하는 것이 아니라 원곡을 참조해 새 결과물을 뽑아냅니다.
+    그래서 크레딧이 소모되고, 결과가 원곡과 똑같지 않습니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>Variation</th><th>변화 정도</th><th>쓰임</th></tr>
+    <tr><td>Subtle</td><td>작은 음향·프로덕션 디테일만</td><td>발매 직전 보정 — 가장 안전</td></tr>
+    <tr><td>Normal</td><td>길이·스타일 유지, 디테일 변주</td><td>적당한 리프레시</td></tr>
+    <tr><td>High</td><td>악기·보컬까지 변할 수 있음</td><td>사실상 새 테이크</td></tr>
+  </table></div>
+  <div class="tw"><table>
+    <tr><th>Style</th><th>성격</th></tr>
+    <tr><td>Natural</td><td>원래 질감 보존</td></tr>
+    <tr><td>Boost <i>(기본값)</i></td><td>고역 부스트 + 리미터. 생각보다 세게 걸립니다</td></tr>
+    <tr><td>Clarity</td><td>명료도 중심</td></tr>
+  </table></div>
+  <div class="box care">
+    기본값이 <code>Normal + Boost</code>로 잡혀 있습니다. 발라드나 어쿠스틱 계열에서는
+    고역이 날카로워지고 다이내믹이 눌릴 수 있습니다.
+    감성곡이라면 <code>Subtle + Natural</code>부터 시도하고, 원본과 비교해 더 나을 때만 채택하세요.
+  </div>
+  <div class="box stop">
+    <b>MV 편집 전에 리마스터 여부를 확정하세요.</b>
+    재생성이라 보컬 타이밍이 미세하게 달라질 수 있습니다.
+    자막을 다 맞춘 뒤에 음원을 교체하면 SRT 타임스탬프를 다시 검증해야 합니다.
+  </div>
+
+  <h4>③ 측정이 먼저입니다</h4>
+  <p>
+    Suno가 뽑아주는 WAV는 이미 스트리밍 기준에 가깝게 나오는 경우가 많습니다.
+    <b>마스터링 도구를 돌리기 전에 지금 파일이 어떤 상태인지부터 확인하세요.</b>
+    무료 측정기(Youlean Loudness Meter 2 등)로 다섯 가지를 봅니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>지표</th><th>목표</th><th>의미</th></tr>
+    <tr><td>Integrated LUFS</td><td>-14 안팎</td><td>스포티파이·유튜브 기준 음량</td></tr>
+    <tr><td>True Peak</td><td>-1.0 dBTP 이하</td><td>재인코딩 시 왜곡 방지</td></tr>
+    <tr><td>LRA</td><td>5~9 LU (발라드)</td><td>다이내믹 폭</td></tr>
+    <tr><td>PLR</td><td>8 dB 이상</td><td>낮으면 과하게 눌린 상태</td></tr>
+    <tr><td>클리핑 샘플</td><td>0개</td><td>0이 아니면 음원 자체 문제</td></tr>
+  </table></div>
+  <div class="box good">
+    <b>실측 예시</b> — 측정해보니 Integrated -14.2 LUFS, True Peak -3.9 dBTP, LRA 7.8, PLR 10.3이 나왔습니다.
+    이미 기준에 맞아 있어서 <b>자동 마스터링을 돌리지 않는 것이 정답</b>이었습니다.
+    돌렸다면 음량을 더 밀어붙이면서 PLR만 깎였을 겁니다.
+  </div>
+
+  <h4>④ 표준 공정 3단계</h4>
+  <p>측정과 무관하게 모든 곡에 적용할 만한 최소 공정입니다.</p>
+
+  <h5>1단계 — 엔딩 페이드아웃 + 무음 추가 <span style="color:var(--warn)">(필수)</span></h5>
+  <p>
+    Suno 출력은 <b>끝 여백이 0초</b>로, 페이드가 내려가다 중간에 잘려 나가는 경우가 많습니다.
+    실제로 측정해보면 마지막 40ms에서 오히려 소리가 커진 상태로 뚝 끊기기도 합니다.
+  </p>
+  <p>
+    들리지 않는 수준이어도 플랫폼이 AAC·Opus로 재인코딩할 때 그 불연속 지점에서
+    클릭 노이즈가 생길 수 있고, 다음 곡으로 넘어갈 때 "툭" 하는 소리가 납니다.
+  </p>
+  <ul>
+    <li>끝에 <b>300ms 페이드아웃</b>을 겁니다 (직선보다 코사인 곡선이 자연스럽습니다)</li>
+    <li>그 뒤에 <b>0.5초 디지털 무음</b>을 붙입니다</li>
+  </ul>
+
+  <h5>2단계 — 10kHz 하이셸프 +1.75dB <span style="color:var(--ink-faint)">(권장)</span></h5>
+  <p>
+    AI 생성곡은 12~16kHz 대역(공기감)이 전반적으로 얇게 나오는 경향이 있습니다.
+    Q=0.707의 완만한 셸프를 걸면 보컬 중역은 건드리지 않고 숨결과 공간감만 살아납니다.
+  </p>
+  <div class="box tip">
+    <b>18kHz 이상은 부스트해도 소용없습니다.</b>
+    Suno가 주는 "WAV"는 무손실 원본이 아니라 내부 손실 압축본을 디코딩한 것이라,
+    17~18kHz에서 에너지가 수직으로 떨어집니다. 그 위에는 아무것도 없습니다.
+    그래도 추가 세대 손실을 막는 효과는 있으니 WAV를 쓰는 원칙 자체는 유지하세요.
+  </div>
+
+  <h5>3단계 — 고역 컷오프 확인</h5>
+  <p>
+    같은 Suno 곡이라도 생성 시기나 모델에 따라 컷오프가 다릅니다(17.8kHz와 20kHz가 섞여 나옵니다).
+    여러 곡을 앨범으로 묶을 때 이 값이 들쭉날쭉하면 질감이 어긋나므로, 미리 확인해 두면 좋습니다.
+  </p>
+
+  <h4>⑤ 무료 마스터링 도구 — 비교해서 더 나을 때만</h4>
+  <div class="tw"><table>
+    <tr><th>도구</th><th>비용</th><th>출력</th><th>메모</th></tr>
+    <tr><td>BandLab Mastering</td><td>무료</td><td>WAV</td><td>워터마크 없음, 상업적 사용 가능. 프리셋 4종</td></tr>
+    <tr><td>Mixea (DistroKid)</td><td>1곡 무료 / 이후 연 $99</td><td>24bit 48kHz</td><td>비트뎁스 유리. 이미 쓰는 유통사 도구</td></tr>
+    <tr><td>Matchering</td><td>무료 (오픈소스)</td><td>WAV</td><td>레퍼런스 곡에 맞춰줌. 설치 필요</td></tr>
+  </table></div>
+  <div class="box stop">
+    <b>이중 마스터링을 조심하세요.</b>
+    Suno 출력은 이미 리미터가 걸린 상태인 경우가 많습니다. 특히 Remaster의 Boost 모드를 썼다면
+    고역 부스트 + 리미터가 이미 들어가 있습니다. 여기에 또 리미팅을 걸면 다이내믹이 죽고 보컬이 답답해집니다.
+    <b>원본과 블라인드로 비교해서 확실히 나을 때만 교체하세요.</b>
+  </div>
+
+  <h4>⑥ DistroKid 화면의 마스터링 유도</h4>
+  <p>
+    My Music 상단의 <code>Master a track</code>, 발매작 상세 화면의 <code>Enhance audio</code>,
+    제출 후 뜨는 마스터링 업셀 화면이 모두 같은 기능입니다.
+  </p>
+  <p>
+    제출 후 화면에서는 <b>"Use my originals" ($0)</b>을 고르고 Continue를 누르세요.
+    측정해서 기준에 맞아 있다면 돈을 내고 이미 된 걸 또 할 이유가 없습니다.
+  </p>
+
+  <h4>⑦ 출력 포맷 — 두 가지를 만들어두세요</h4>
+  <div class="tw"><table>
+    <tr><th>용도</th><th>포맷</th><th>비고</th></tr>
+    <tr><td>발매용 (DistroKid 업로드)</td><td>24bit / 48kHz</td><td>디더 불필요</td></tr>
+    <tr><td>영상 편집 소스 (CapCut 등)</td><td>16bit / 48kHz</td><td>TPDF 디더 적용</td></tr>
+  </table></div>
+  <div class="box good">
+    <b>마스터링은 길이와 타이밍을 바꾸지 않습니다.</b>
+    음량과 음색만 달라지므로 자막 싱크나 SRT 타임스탬프에 영향이 없습니다.
+    영상 편집을 다 마친 뒤 오디오만 교체해도 되고, 그편이 효율적입니다.
+    단 끝에 붙인 0.5초만큼 영상 길이를 늘려주세요.
+  </div>
+
+  <div class="box stop">
+    <b>한 번 발매한 파일은 교체하지 마세요.</b>
+    나중에 EP·앨범에 같은 곡을 넣을 때 동일 ISRC를 쓰려면 오디오가 완전히 같아야 합니다.
+    <b>발매 전에 마스터링 기준을 확정</b>하고, 그 파일을 그대로 보관하세요.
+    이미 발매된 곡에는 이 장의 공정을 소급 적용할 수 없습니다.
+  </div>
+</section>
+
+<section class="ch" id="ch4">
+  <h3><span class="n">4</span>커버아트 만들기</h3>
+
+  <p>
+    커버는 <b>0.5초 안에 읽혀야 하는 매체</b>입니다.
+    스포티파이 재생목록에서 실제로 표시되는 크기는 50~60px에 불과합니다.
+    전체 화면에서 아무리 아름다워도 그 크기에서 뭉개지면 의미가 없습니다.
+  </p>
+
+  <h4>① 규격</h4>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>기준</th></tr>
+    <tr><td>크기</td><td>3,000 × 3,000px (정사각형)</td></tr>
+    <tr><td>포맷</td><td>JPG 또는 PNG · RGB(sRGB)</td></tr>
+    <tr><td>최소 허용</td><td>1,400px — 다만 3,000px 권장</td></tr>
+    <tr><td>알파 채널</td><td>없어야 함</td></tr>
+    <tr><td>금지 요소</td><td>URL, 스토어 로고(Spotify·iTunes 등), 가격 표시, 소셜 핸들</td></tr>
+    <tr><td>텍스트</td><td>곡 제목 + 아티스트명 정도까지만</td></tr>
+  </table></div>
+  <div class="box tip">
+    커버에 "싱글"이나 <code>- Single</code>을 넣을 필요는 없습니다. 플랫폼이 메타데이터를 보고 자동 표시합니다.
+  </div>
+
+  <h4>② 두 가지 경로 — 크롭 vs 신규 생성</h4>
+  <p>MV 이미지를 이미 만들어두셨다면 두 갈래가 있습니다.</p>
+  <div class="tw"><table>
+    <tr><th></th><th>MV 프레임 크롭</th><th>1:1 신규 생성</th></tr>
+    <tr><td>장점</td><td>영상과 시각적으로 이어짐, 빠름</td><td>구도 손실 없음, 해상도 유리</td></tr>
+    <tr><td>단점</td><td>16:9 &rarr; 1:1에서 좌우가 잘림</td><td>프롬프트 설계 필요</td></tr>
+    <tr><td>적합</td><td>인물이 <b>정중앙</b>에 있는 장면</td><td>그 외 전부</td></tr>
+  </table></div>
+  <div class="box care">
+    <b>숫자로 보면 차이가 큽니다.</b>
+    1536×1024 이미지를 정사각 크롭하면 1024px만 남아 3,000px까지 <b>2.9배</b> 늘려야 합니다.
+    반면 1:1로 생성하면 1254px이 그대로 살아 <b>2.4배</b>면 됩니다.
+    실제 정보량이 50% 차이 나고, 구름 가장자리나 반사면 질감에서 티가 납니다.
+  </div>
+  <div class="box stop">
+    자막이 박힌 영상 프레임은 커버로 쓸 수 없습니다. 16:9이기도 하고, 글자가 들어간 이미지는
+    썸네일에서 읽히지도 않습니다. 반드시 자막 없는 원본 이미지를 쓰세요.
+  </div>
+
+  <h4>③ 썸네일에서 살아남는 조건 3가지</h4>
+
+  <h5>실루엣 — 형태가 단순할수록 작아져도 읽힙니다</h5>
+  <p>
+    세밀한 디테일은 50px에서 전부 사라집니다. 명암 대비가 큰 실루엣 구도는 그 크기에서도 형태가 남습니다.
+    64px로 줄였을 때 밝기 표준편차가 <b>30 이상</b>이면 양호하다고 보면 됩니다.
+  </p>
+
+  <h5>중앙 집중 — 가장자리가 어두워야 시선이 모입니다</h5>
+  <p>
+    중앙 영역과 가장자리의 밝기 차가 클수록 작은 썸네일에서 주제가 선명해집니다.
+    생성 단계에서 <code>deep vignette darkening the outer edges</code>를 넣거나,
+    후보정으로 비네팅을 약하게 더하면 됩니다.
+  </p>
+
+  <h5>상단 여백 — 재생 UI가 겹칩니다</h5>
+  <p>
+    스포티파이·애플뮤직은 재생 화면에서 커버 상단에 UI를 얹습니다.
+    상단 10~15%를 어둡게 비워두면 겹쳐도 깔끔하고, 나중에 곡명 텍스트를 올릴 여지도 생깁니다.
+  </p>
+  <div class="box good">
+    프롬프트에 <code>generous dark headroom at the top</code>을 넣었더니
+    상단 15% 평균 밝기가 58 &rarr; 25(255 기준)로 떨어졌습니다. 의도대로 작동합니다.
+  </div>
+
+  <h4>④ 커버용 이미지 생성 프롬프트 설계</h4>
+  <p>MV용 프롬프트와 다릅니다. 아래 다섯 가지를 명시적으로 넣으세요.</p>
+  <div class="tw"><table>
+    <tr><th>요소</th><th>영문 키워드 예시</th><th>이유</th></tr>
+    <tr><td>정사각 비율</td><td><code>1:1 square aspect ratio</code></td><td>크롭 손실 방지</td></tr>
+    <tr><td>중앙 대칭</td><td><code>centered symmetrical composition</code></td><td>구도 안정</td></tr>
+    <tr><td>상단 여백</td><td><code>generous dark headroom at the top</code></td><td>UI 간섭 회피</td></tr>
+    <tr><td>비네팅</td><td><code>deep vignette darkening the outer edges</code></td><td>시선 집중</td></tr>
+    <tr><td>텍스트 금지</td><td><code>no text, no logos, no watermarks</code></td><td>글자 삽입 방지</td></tr>
+  </table></div>
+  <div class="box care">
+    <b>이미지 생성기는 지시를 한 번만 쓰면 무시하는 경우가 많습니다.</b>
+    꼭 지켜야 할 조건은 표현을 바꿔가며 두세 번 반복해서 넣으세요.
+    인물 얼굴을 흐리게 하고 싶다면 <code>never as defined faces</code>,
+    <code>barely discernible</code>, <code>no visible facial features</code>처럼 세 번 명시하는 식입니다.
+  </div>
+  <div class="box tip">
+    인물 크기도 숫자로 지정하면 통합니다.
+    <code>occupying roughly one eighth of the frame height</code>를 넣으니 실측 15%가 나왔습니다.
+    너무 작으면 썸네일에서 묻히고, 너무 크면 배경이 죽습니다.
+  </div>
+
+  <h4>⑤ 업스케일 — 한 번에 늘리지 마세요</h4>
+  <p>
+    1,024px을 3,000px으로 한 번에 늘리면 2.9배라 윤곽이 뭉개집니다.
+    <b>중간 단계를 거치면 각 단계가 2배 이내</b>가 되어 아티팩트가 훨씬 적습니다.
+  </p>
+  <div class="box good">
+    <code>1024 &rarr; 2048 &rarr; 3000</code> 순으로 두 번에 나눠 늘린 뒤,
+    업스케일 특유의 연화를 언샵 마스크로 되돌립니다.
+    무료 도구로는 Upscayl이 있고, 이미지 편집기의 Lanczos 리샘플링으로도 충분합니다.
+  </div>
+
+  <h4>⑥ 업로드 전 최종 확인</h4>
+  <ul class="check">
+    <li>3,000 × 3,000px 정사각형인가</li>
+    <li>RGB(sRGB) 모드이고 알파 채널이 없는가</li>
+    <li>50px로 줄였을 때 주제가 식별되는가</li>
+    <li>상단 10~15%가 비교적 어두운가</li>
+    <li>URL·스토어 로고·소셜 핸들이 없는가</li>
+    <li>자막이나 뭉개진 글자가 박혀 있지 않은가</li>
+  </ul>
+
+  <div class="box care">
+    <b>발매 후에는 커버도 ISRC와 함께 묶입니다.</b>
+    나중에 EP·앨범에 같은 곡을 재수록할 때 혼란을 줄이려면,
+    작업 폴더에 <b>최종 커버 파일 하나만</b> 남기고 후보들은 따로 보관하세요.
+  </div>
+</section>
+
 <!-- ══════════ PART 2 ══════════ -->
 <div class="part-head">
   <p class="label">Part 2</p>
@@ -433,8 +861,8 @@ footer a{color:#8FB4CE}
   <p>가입부터 제출까지. 화면에 뜨는 영문 문구를 그대로 기준으로 삼았습니다.</p>
 </div>
 
-<section class="ch" id="ch3">
-  <h3><span class="n">3</span>DistroKid 가입</h3>
+<section class="ch" id="ch5">
+  <h3><span class="n">5</span>DistroKid 가입</h3>
 
   <ol class="steps">
     <li><b>distrokid.com 접속</b>브라우저 주소창에 직접 입력합니다.</li>
@@ -469,8 +897,8 @@ footer a{color:#8FB4CE}
   </div>
 </section>
 
-<section class="ch" id="ch4">
-  <h3><span class="n">4</span>아티스트 프로필 설정</h3>
+<section class="ch" id="ch6">
+  <h3><span class="n">6</span>아티스트 프로필 설정</h3>
   <p>대시보드(My Music)에서 "Tell us your artist/band name"을 클릭합니다.</p>
   <div class="tw"><table>
     <tr><th>항목</th><th>입력</th><th>설명</th></tr>
@@ -485,8 +913,8 @@ footer a{color:#8FB4CE}
   </div>
 </section>
 
-<section class="ch" id="ch5">
-  <h3><span class="n">5</span>업로드 — 기본 설정</h3>
+<section class="ch" id="ch7">
+  <h3><span class="n">7</span>업로드 — 기본 설정</h3>
   <p>"Upload music" 버튼을 누르면 긴 양식이 나옵니다. 위에서부터 순서대로 봅니다.</p>
 
   <h4>Services (유통 플랫폼)</h4>
@@ -499,7 +927,7 @@ footer a{color:#8FB4CE}
   <div class="box stop">
     <span class="t">첫 발매에서는 체크하지 마세요</span>
     YouTube Content ID가 포함되어 있어서, 내 유튜브 채널에 올린 MV에 저작권 클레임이 걸릴 수 있습니다.
-    왜 그런지와 예외 조건은 <a href="#ch26">26장</a>에서 따로 다룹니다. 나중에 언제든 추가할 수 있으니 지금은 넘어가세요.
+    왜 그런지와 예외 조건은 <a href="#ch28">28장</a>에서 따로 다룹니다. 나중에 언제든 추가할 수 있으니 지금은 넘어가세요.
   </div>
 
   <h4>Has this single been previously released?</h4>
@@ -539,6 +967,41 @@ footer a{color:#8FB4CE}
     제출일로부터 <strong>최소 2주 뒤</strong>로 잡으세요. 심사 기간을 확보할 수 있고,
     스포티파이 플레이리스트 피칭 기회도 생깁니다. 피칭은 통상 발매 7일 전이 마감입니다.
   </p>
+  <div class="box tip">
+    <span class="t">금요일로 잡으세요</span>
+    전 세계 차트 집계 주기가 금요일 기준입니다. 같은 노력이면 주의 시작에 걸리는 편이 유리합니다.
+  </div>
+
+  <h4>Release time &middot; Time synchronization (Spotify 전용)</h4>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>선택</th><th>이유</th></tr>
+    <tr><td>Release time</td><td>12:00 AM 유지</td><td>현지 자정 공개. 유튜브 예고와 맞추기 자연스러움</td></tr>
+    <tr><td>Time synchronization</td><td><b>리스너 시간대 기준</b> (기본값)</td><td>아래 참고</td></tr>
+    <tr><td>Preorder</td><td>No</td><td>iTunes 다운로드 판매용. 사전 저장은 HyperFollow가 담당</td></tr>
+  </table></div>
+  <div class="box care">
+    <span class="t">전 세계 동시 공개를 고르면 한국은 오후에 열립니다</span>
+    두 번째 선택지(뉴욕 기준 동시 공개)를 고르면 한국 청취자는 발매일 <b>오후 1시</b>가 되어야 들을 수 있습니다.
+    국내 청취자가 주 대상이라면 기본값을 그대로 두세요.
+  </div>
+
+  <h4>두 번째 발매부터는 화면이 달라집니다</h4>
+  <p>
+    첫 발매에서는 Spotify &middot; Apple Music 프로필 연결을 "No"로 골랐지만,
+    두 번째부터는 아티스트명을 입력하는 순간 <b>플랫폼이 기존 프로필을 자동으로 찾아냅니다.</b>
+  </p>
+  <div class="box good">
+    <span class="t">이 문구가 보이면 정상입니다</span>
+    <em>"This release will appear in Spotify alongside your other 메타포뮤직 release(s)"</em><br>
+    Spotify &middot; Apple Music &middot; YouTube Music 세 곳에서 각각 확인됩니다.
+    이 확인이 뜨면 기존 아티스트 페이지에 곡이 추가된다는 뜻입니다.
+  </div>
+  <div class="box stop">
+    <span class="t">아티스트명은 드롭다운에서 고르세요</span>
+    직접 타이핑하면 한 글자 차이로 <b>새 아티스트 프로필이 만들어집니다.</b>
+    그러면 두 곡이 서로 다른 페이지에 흩어지고, 되돌리려면 지원팀에 병합을 요청해야 합니다.
+    괄호 병기(<code>메타포뮤직(Metaphor Music)</code>)도 다른 이름으로 취급되니 주의하세요.
+  </div>
 
   <h4>Record label</h4>
   <p>소속 레이블이 없어도 자유롭게 만들 수 있습니다. 아티스트 브랜드의 영문명을 넣으세요.</p>
@@ -553,8 +1016,8 @@ footer a{color:#8FB4CE}
   <p>Primary는 K-Pop 또는 Pop, Secondary는 선택 사항입니다(R&amp;B/Soul, Indie Pop 등).</p>
 </section>
 
-<section class="ch" id="ch6">
-  <h3><span class="n">6</span>업로드 — 트랙 정보 입력</h3>
+<section class="ch" id="ch8">
+  <h3><span class="n">8</span>업로드 — 트랙 정보 입력</h3>
 
   <h4>Album cover</h4>
   <p>준비한 3,000×3,000px 커버를 올립니다.</p>
@@ -580,6 +1043,22 @@ footer a{color:#8FB4CE}
     <tr><td>Last name</td><td>영문 성</td></tr>
   </table></div>
 
+  <h4>ISRC Code</h4>
+  <p>
+    입력란이 하나 나오는데, <b>새 곡의 첫 발매라면 비워두세요.</b> DistroKid가 자동으로 발급합니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>상황</th><th>입력</th></tr>
+    <tr><td>새 곡 첫 발매</td><td class="y">비워두기 — 자동 발급</td></tr>
+    <tr><td>이미 발매한 곡을 EP&middot;앨범에 재수록</td><td class="n">기존 ISRC를 그대로 입력</td></tr>
+    <tr><td>다른 유통사에서 냈던 곡 이전</td><td class="n">기존 ISRC를 그대로 입력</td></tr>
+  </table></div>
+  <div class="box stop">
+    <span class="t">1집 번호를 복사해 넣으면 안 됩니다</span>
+    ISRC는 녹음물 하나에 하나입니다. 다른 곡에 같은 번호를 넣으면 두 곡이 같은 녹음으로 인식되어
+    재생 수가 뒤섞이고 스토어에서 반려될 수 있습니다.
+  </div>
+
   <h4>Explicit / Radio edit / Instrumental</h4>
   <div class="tw"><table>
     <tr><th>항목</th><th>선택</th><th>기준</th></tr>
@@ -589,8 +1068,8 @@ footer a{color:#8FB4CE}
   </table></div>
 </section>
 
-<section class="ch" id="ch7">
-  <h3><span class="n">7</span>AI 고지 설정</h3>
+<section class="ch" id="ch9">
+  <h3><span class="n">9</span>AI 고지 설정</h3>
   <div class="box stop">
     <span class="t">전체 과정에서 가장 중요한 단계입니다</span>
     잘못 설정하면 해당 곡 삭제에서 끝나지 않고, 계정 정지와 로열티 동결까지 이어질 수 있습니다.
@@ -624,20 +1103,34 @@ footer a{color:#8FB4CE}
   </div>
 </section>
 
-<section class="ch" id="ch8">
-  <h3><span class="n">8</span>최종 확인 및 제출</h3>
+<section class="ch" id="ch10">
+  <h3><span class="n">10</span>최종 확인 및 제출</h3>
 
   <h4>Apple Music 추가 크레딧</h4>
+  <div class="box stop">
+    <span class="t">건너뛸 수 없습니다 — 제출이 막힙니다</span>
+    이 항목을 비워두고 제출하면 아래 오류로 차단됩니다.<br>
+    <em>"Add track credits to meet Apple requirements — Apple requires that each track has
+    at least one performer credit and one producer credit."</em><br>
+    화면에 "나중에 추가할 수 있다"는 안내가 있지만, 그건 <b>Apple Music을 스토어에서 빼야</b> 가능합니다.
+    2분이면 끝나니 지금 채우세요.
+  </div>
   <p>애플뮤직은 performer와 producer 크레딧을 따로 요구합니다.</p>
   <div class="tw"><table>
     <tr><th>항목</th><th>Select a role</th><th>Name</th></tr>
     <tr><td>Performer</td><td>Singing &amp; vocals</td><td>영문 본명</td></tr>
     <tr><td>Producer</td><td>Producer</td><td>영문 본명</td></tr>
   </table></div>
+  <div class="box tip">
+    <span class="t">역할 드롭다운이 매우 깁니다</span>
+    Performer의 <code>Select a role</code>을 누르면 악기명이 수십 개 나열됩니다
+    (Sampler, Saxophone, Shaker&hellip;). 알파벳 순이므로 <b>S 구간에서 "Singing &amp; vocals"</b>를 찾으세요.
+    드롭다운을 연 상태에서 키보드로 머리글자를 누르면 바로 점프합니다.
+  </div>
   <div class="box care">
     <span class="t">AI 보컬인데 왜 본명인가</span>
     DistroKid는 실연자 크레딧에 사람 한 명 이상을 반드시 요구합니다.
-    이 제약과 대응은 <a href="#ch10">10장</a>에서 자세히 설명합니다.
+    이 제약과 대응은 <a href="#ch12">12장</a>에서 자세히 설명합니다.
   </div>
 
   <h4>기타 설정</h4>
@@ -654,9 +1147,9 @@ footer a{color:#8FB4CE}
     <tr><td>Leave a Legacy</td><td>$29/곡</td><td>보류 — 구독 유지 중이면 불필요</td></tr>
     <tr><td>Discovery Pack</td><td>$0.99/년</td><td>선택 — 부작용은 없으나 실익도 작음</td></tr>
     <tr><td>Store Maximizer</td><td>$7.95/년</td><td>불필요 — 이미 전체 선택됨</td></tr>
-    <tr><td>DistroVid Video</td><td>$99/년</td><td>불필요 — 유튜브 직접 관리</td></tr>
-    <tr><td>Loudness Normalization</td><td>$2.99</td><td>불필요 — 플랫폼이 자체 조절</td></tr>
-    <tr><td>Social Media Pack</td><td class="n">$4.95/년</td><td class="n">보류 — 26장 참고</td></tr>
+    <tr><td>DistroVid Video</td><td>$8.25/월 (연 $99)</td><td>불필요 — 유튜브 직접 관리</td></tr>
+    <tr><td>Loudness Normalization</td><td>$2.99</td><td>불필요 — <a href="#ch3">3장</a>에서 이미 기준에 맞춰둠</td></tr>
+    <tr><td>Social Media Pack</td><td class="n">$4.95/년</td><td class="n">보류 — 28장 참고</td></tr>
   </table></div>
 
   <h4>제출 직전 3가지</h4>
@@ -686,8 +1179,8 @@ footer a{color:#8FB4CE}
   <p>대부분의 가이드가 여기서 끝납니다. 그런데 실제로 시간이 걸리고 막히는 곳은 전부 이 다음입니다.</p>
 </div>
 
-<section class="ch" id="ch9">
-  <h3><span class="n">9</span>발매작 상세 화면 읽기</h3>
+<section class="ch" id="ch11">
+  <h3><span class="n">11</span>발매작 상세 화면 읽기</h3>
   <p>
     My Music에서 곡 제목을 클릭하면 발매작 상세 화면이 열립니다.
     여기가 앞으로 모든 후속 작업의 출발점입니다.
@@ -706,13 +1199,55 @@ footer a{color:#8FB4CE}
     이 문구가 보이면 각 스토어로 정상 전달된 것입니다. 발매일까지 기다리면 됩니다.
   </div>
 
+  <h4>제출 직후에는 ISRC와 UPC가 비어 있습니다</h4>
+  <p>
+    제출하자마자 들어가면 UPC 칸이 비어 있고 ISRC 배지도 안 보입니다. 오류가 아닙니다.
+  </p>
+  <div class="box good">
+    <em>"Your song and artwork files are being processed."</em><br>
+    파일 처리가 끝나야 번호가 발급됩니다. 보통 <b>몇 시간에서 하루</b> 걸립니다.
+    다음 날 다시 들어오면 채워져 있습니다.
+  </div>
+  <div class="box stop">
+    <span class="t">"Cancel single" 버튼을 누르지 마세요</span>
+    처리 중 화면에는 취소 버튼이 함께 뜹니다. 누르면 지금까지 입력한 모든 정보가 사라지고
+    처음부터 다시 해야 합니다. 수정이 필요하면 옆의 <code>Edit Release</code>를 쓰세요.
+  </div>
+
+  <h4>ISRC 확인하기 — 가장 중요한 번호</h4>
+  <p>
+    ISRC는 <b>Track list 줄의 오른쪽 끝 회색 배지</b>에 있습니다.
+    <code>ISRC QT9XP2647639</code> 같은 12자리입니다. UPC는 상단에 따로 표시됩니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>번호</th><th>단위</th><th>쓰임</th></tr>
+    <tr><td>ISRC</td><td>녹음물 하나당 하나</td><td>EP&middot;앨범 재수록 시 <b>반드시 재사용</b></td></tr>
+    <tr><td>UPC</td><td>릴리즈 하나당 하나</td><td>문의용. 재수록 시 새로 발급됨</td></tr>
+  </table></div>
+  <div class="box care">
+    <span class="t">발급되는 즉시 따로 적어두세요</span>
+    나중에 이 곡을 EP나 앨범에 넣을 때 같은 ISRC를 입력해야 재생 수가 분리되지 않습니다.
+    곡이 늘어날수록 대시보드에서 찾기 번거로워지므로, 곡명&middot;ISRC&middot;발매일을
+    정리한 시트를 따로 만들어두시길 권합니다.
+  </div>
+
+  <h4>발매 전이라면 Edit Release로 수정할 수 있습니다</h4>
+  <p>
+    제목&middot;크레딧&middot;발매일 같은 메타데이터는 발매일 전까지 자유롭게 고칠 수 있습니다.
+  </p>
+  <div class="box stop">
+    <span class="t">오디오 파일과 ISRC는 건드리지 마세요</span>
+    메타데이터만 수정하면 ISRC가 유지됩니다. 음원을 교체하면 앞으로 이 곡을 재수록할 때
+    동일 ISRC를 쓸 수 없게 됩니다.
+  </div>
+
   <h4>Track list 줄의 링크들</h4>
   <p>곡 제목 오른쪽에 작은 링크가 여러 개 붙어 있습니다. 후속 작업은 대부분 여기서 시작합니다.</p>
   <div class="tw"><table>
     <tr><th>링크</th><th>용도</th><th>이 가이드</th></tr>
-    <tr><td>Plain lyrics</td><td>일반 가사 등록</td><td><a href="#ch11">11장</a></td></tr>
-    <tr><td>Synced lyrics</td><td>시간 동기화 가사</td><td><a href="#ch11">11장</a></td></tr>
-    <tr><td>Credits</td><td>크레딧 입력</td><td><a href="#ch10">10장</a></td></tr>
+    <tr><td>Plain lyrics</td><td>일반 가사 등록</td><td><a href="#ch13">13장</a></td></tr>
+    <tr><td>Synced lyrics</td><td>시간 동기화 가사</td><td><a href="#ch13">13장</a></td></tr>
+    <tr><td>Credits</td><td>크레딧 입력</td><td><a href="#ch12">12장</a></td></tr>
     <tr><td>Download</td><td>업로드한 음원 내려받기</td><td>—</td></tr>
   </table></div>
 
@@ -728,8 +1263,8 @@ footer a{color:#8FB4CE}
   </p>
 </section>
 
-<section class="ch" id="ch10">
-  <h3><span class="n">10</span>크레딧 입력</h3>
+<section class="ch" id="ch12">
+  <h3><span class="n">12</span>크레딧 입력</h3>
   <p>
     스포티파이·애플뮤직의 크레딧 탭에 표시되는 정보입니다.
     Track list의 <strong>Credits</strong> 링크에서 입력합니다.
@@ -758,11 +1293,53 @@ Please add another musician (non-AI) before removing this credit.</p>
       </p>
       <span class="fix">→ 결론</span>
       <p>
-        <strong>그대로 두는 것이 맞습니다.</strong> 플랫폼이 구조적으로 요구하는 항목이라 우회할 방법이 없습니다.
+        <strong>그대로 두는 것이 맞습니다.</strong> 실연자 한 명은 반드시 남아 있어야 하기 때문입니다.
         AI 사용은 별도 항목 두 개로 이미 명시되어 있고, 업로드 단계의 AI 고지에서도 밝혔으므로
         전체적으로 투명성은 확보된 상태입니다.
       </p>
     </div>
+  </div>
+
+  <h4>이름을 고쳐야 할 때 — 순서를 뒤집으세요</h4>
+  <p>
+    삭제가 막히는 것은 "실연자가 0명이 되는 것"을 막기 위해서지, 수정 자체가 불가능한 것은 아닙니다.
+    <b>먼저 새 크레딧을 추가한 뒤 기존 것을 지우면</b> 조건이 유지되어 통과합니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>순서</th><th>결과</th></tr>
+    <tr><td class="n">삭제 &rarr; 추가</td><td class="n">막힘 — "Please add another musician (non-AI)"</td></tr>
+    <tr><td class="y">추가 &rarr; 삭제</td><td class="y">통과</td></tr>
+  </table></div>
+  <ol class="steps">
+    <li><b>Add new&hellip; 로 올바른 이름을 먼저 추가</b>Songwriter &rarr; Music and lyrics,
+      Musician &rarr; Singing &amp; vocals, Producer &rarr; Producer 세 개를 넣습니다.
+      중간에 목록이 8줄까지 늘어나는데 정상입니다.</li>
+    <li><b>기존 이름 3줄을 삭제</b>이제 실연자가 남아 있으므로 휴지통 아이콘이 동작합니다.</li>
+    <li><b>5줄 구조로 정리되었는지 확인</b>사람 크레딧 3개 + AI 2개입니다.</li>
+  </ol>
+  <div class="box tip">
+    <span class="t">Add new&hellip; 는 대분류입니다</span>
+    드롭다운에서 고르면 세부 역할을 다시 선택하는 화면이 나옵니다.
+    <code>Singing &amp; vocals</code>는 <b>Musician</b> 아래에 있습니다.
+  </div>
+
+  <h4>두 번째 발매부터 — 이름 철자를 반드시 통일하세요</h4>
+  <p>
+    애플뮤직과 스포티파이는 <b>크레딧 이름으로 작업자 페이지를 자동 생성</b>합니다.
+    철자가 한 글자라도 다르면 두 곡이 서로 다른 사람의 작업물로 갈라집니다.
+  </p>
+  <div class="box stop">
+    <span class="t">실제로 겪은 사례</span>
+    1집은 <code>Gwangbae Kim</code>, 2집은 <code>Kwangbae Kim</code>으로 입력됐습니다.
+    G와 K 한 글자 차이인데 플랫폼은 다른 사람으로 봅니다.
+    <b>새 곡을 올리기 전에 이전 곡의 Credits 화면을 열어 철자를 확인하세요.</b>
+    띄어쓰기와 이름&middot;성 순서까지 그대로 맞춰야 합니다.
+  </div>
+  <div class="box good">
+    <span class="t">Import credits from another song &mdash; 가장 안전한 방법</span>
+    <code>Add new&hellip;</code> 드롭다운 맨 아래에 있습니다.
+    이전 곡의 크레딧을 통째로 복사해 오므로 직접 타이핑할 필요가 없고, 오타가 원천적으로 생기지 않습니다.
+    곡이 늘어날수록 이 기능이 표준 작업이 됩니다.
   </div>
 
   <h4>"Heads up!" 안내가 뜰 때</h4>
@@ -780,8 +1357,8 @@ Please add another musician (non-AI) before removing this credit.</p>
   </div>
 </section>
 
-<section class="ch" id="ch11">
-  <h3><span class="n">11</span>가사 등록</h3>
+<section class="ch" id="ch13">
+  <h3><span class="n">13</span>가사 등록</h3>
   <p>
     가사를 등록하면 스포티파이·애플뮤직에서 재생 중에 가사가 표시됩니다.
     가사가 강점인 곡이라면 반드시 해야 할 작업입니다.
@@ -792,6 +1369,21 @@ Please add another musician (non-AI) before removing this credit.</p>
     주소창에 <code>distrokid.com/lyrics</code>를 직접 입력하는 것이 가장 빠릅니다.
     메뉴로 가려면 우측 상단 기능 메뉴 → "내 음악을 더 돋보이게" → "가사" 순입니다.
   </p>
+
+  <h4>입력 화면의 형식 규칙</h4>
+  <p>가사 입력창 오른쪽에 DistroKid가 직접 제시하는 규칙이 붙어 있습니다.</p>
+  <div class="tw"><table>
+    <tr><th>DO — 이렇게</th><th>AVOID — 이건 금지</th></tr>
+    <tr><td>한 줄에 한 문장</td><td>소셜 미디어 링크</td></tr>
+    <tr><td>절과 후렴 사이에 빈 줄</td><td>줄 끝 문장부호</td></tr>
+    <tr><td>반복 구간을 전부 풀어쓰기</td><td>보컬 이름, 섹션 라벨</td></tr>
+    <tr><td>각 줄을 대문자로 시작</td><td>욕설 임의 검열(실제로 묵음 처리된 경우만)</td></tr>
+  </table></div>
+  <div class="box tip">
+    <span class="t">"대문자로 시작"은 한글 가사에 해당하지 않습니다</span>
+    라틴 문자 기준 규칙입니다. 한글은 대소문자가 없으므로 신경 쓰지 않아도 됩니다.
+    다만 가사에 <b>라틴 문자가 섞여 있으면</b> 아래 오류를 만나게 됩니다.
+  </div>
 
   <h4>거절 사유가 되는 것들</h4>
   <div class="tw"><table>
@@ -882,8 +1474,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch12">
-  <h3><span class="n">12</span>HyperFollow 사전 저장 페이지</h3>
+<section class="ch" id="ch14">
+  <h3><span class="n">14</span>HyperFollow 사전 저장 페이지</h3>
   <p>
     발매 전에 팬들이 "미리 저장"을 눌러둘 수 있는 랜딩 페이지입니다.
     <strong>업로드하면 자동으로 만들어지므로 새로 만들 필요가 없습니다.</strong> 편집만 하면 됩니다.
@@ -957,8 +1549,8 @@ at the end of each line.</p>
   <p>이미 채널이 있다면, 발매는 새로운 시작이 아니라 기존 자산을 잇는 일입니다. 제목·댓글·재생목록 세 가지가 실제로 움직입니다.</p>
 </div>
 
-<section class="ch" id="ch13">
-  <h3><span class="n">13</span>유튜브 제목 설계</h3>
+<section class="ch" id="ch15">
+  <h3><span class="n">15</span>유튜브 제목 설계</h3>
   <p>
     음원은 발매했는데 아무도 듣지 않는 가장 흔한 이유는 곡이 나빠서가 아닙니다.
     <strong>제목에서 집니다.</strong> 같은 채널, 비슷한 시기, 비슷한 품질의 곡인데도
@@ -1079,8 +1671,8 @@ at the end of each line.</p>
 수정 후: 나이테 — 부모님 생각나는 밤 📖 아낌없이 주는 나무 🍂 [북메타포 #02]</pre>
 </section>
 
-<section class="ch" id="ch14">
-  <h3><span class="n">14</span>고정 댓글 설계</h3>
+<section class="ch" id="ch16">
+  <h3><span class="n">16</span>고정 댓글 설계</h3>
   <p>
     발매 소식을 알릴 가장 좋은 자리는 <strong>조회수가 가장 많은 기존 영상의 고정 댓글</strong>입니다.
     새 영상을 만들 필요가 없고, 이미 사람이 오고 있는 곳이기 때문입니다.
@@ -1108,7 +1700,7 @@ at the end of each line.</p>
     <tr><th>원칙</th><th>이유</th></tr>
     <tr><td>첫 줄을 시청자의 말로 시작</td><td>"제가 만들었습니다"가 아니라 "여러분이 만들었습니다"가 되면 홍보가 아니라 보고가 됩니다</td></tr>
     <tr><td>플랫폼 이름을 구체적으로 나열</td><td>"24개 플랫폼"만으로는 와닿지 않습니다</td></tr>
-    <tr><td>"플레이리스트에 담아주시고" 명시</td><td>담기가 실제로 채널을 살리는 행동입니다. 23장 참고</td></tr>
+    <tr><td>"플레이리스트에 담아주시고" 명시</td><td>담기가 실제로 채널을 살리는 행동입니다. 25장 참고</td></tr>
   </table></div>
   <div class="box care">
     <span class="t">중요한 정보는 앞쪽 3줄 안에</span>
@@ -1139,8 +1731,8 @@ at the end of each line.</p>
 말씀해주셔서 고맙습니다. 꼭 들어주세요!</pre>
 </section>
 
-<section class="ch" id="ch15">
-  <h3><span class="n">15</span>재생목록과 최종 화면</h3>
+<section class="ch" id="ch17">
+  <h3><span class="n">17</span>재생목록과 최종 화면</h3>
 
   <h4>최종 화면으로 신곡 연결</h4>
   <p>
@@ -1192,8 +1784,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch16">
-  <h3><span class="n">16</span>발매 D-Day 타임라인</h3>
+<section class="ch" id="ch18">
+  <h3><span class="n">18</span>발매 D-Day 타임라인</h3>
   <p>순서가 중요합니다. 가사는 반영에 1~2주가 걸리므로 가장 먼저 해야 합니다.</p>
 
   <div class="tl">
@@ -1205,10 +1797,10 @@ at the end of each line.</p>
     <div class="item"><span class="when">D-3</span><span class="what">커뮤니티 탭에 발매 예고 게시. 구독자에게 알림이 갑니다.</span></div>
     <div class="item"><span class="when">D-Day</span><span class="what">고정 댓글을 발매 당일 버전으로 교체. 링크는 그대로 둡니다.</span></div>
     <div class="item"><span class="when">D-Day</span><span class="what">각 플랫폼에서 음원 검색해 정상 등록 확인.</span></div>
-    <div class="item"><span class="when">D+3~5</span><span class="what">유튜브 뮤직 반영 확인 후 <strong>공식 아티스트 채널 신청</strong> (18장).</span></div>
+    <div class="item"><span class="when">D+3~5</span><span class="what">유튜브 뮤직 반영 확인 후 <strong>공식 아티스트 채널 신청</strong> (20장).</span></div>
     <div class="item"><span class="when">D+7</span><span class="what">Spotify for Artists 가입, 프로필 커스터마이징. Apple Music for Artists도 함께.</span></div>
     <div class="item"><span class="when">D+14</span><span class="what">DistroKid Stats에서 스트리밍 수 확인. 유튜브 지표와 대조.</span></div>
-    <div class="item"><span class="when">D+90</span><span class="what">DistroKid Bank에 첫 수익 반영 (17장).</span></div>
+    <div class="item"><span class="when">D+90</span><span class="what">DistroKid Bank에 첫 수익 반영 (19장).</span></div>
   </div>
 </section>
 
@@ -1219,8 +1811,8 @@ at the end of each line.</p>
   <p>발매일에 실제로 무슨 일이 벌어지는가. 화면 하나하나를 그대로 기록했습니다.</p>
 </div>
 
-<section class="ch" id="ch17">
-  <h3><span class="n">17</span>발매 확인하기</h3>
+<section class="ch" id="ch19">
+  <h3><span class="n">19</span>발매 확인하기</h3>
   <p>
     발매일이 되었다고 해서 모든 플랫폼에 한꺼번에 뜨지 않습니다.
     "안 보인다"고 당황하기 전에, 확인 순서를 알아두면 됩니다.
@@ -1295,8 +1887,8 @@ at the end of each line.</p>
   </p>
 </section>
 
-<section class="ch" id="ch18">
-  <h3><span class="n">18</span>발매 당일 유튜브 작업</h3>
+<section class="ch" id="ch20">
+  <h3><span class="n">20</span>발매 당일 유튜브 작업</h3>
   <p>
     플랫폼 세팅보다 이쪽이 먼저입니다. <strong>오늘 실제로 사람이 반응하는 곳</strong>이기 때문입니다.
   </p>
@@ -1374,8 +1966,8 @@ at the end of each line.</p>
   </p>
 </section>
 
-<section class="ch" id="ch19">
-  <h3><span class="n">19</span>Spotify for Artists 신청</h3>
+<section class="ch" id="ch21">
+  <h3><span class="n">21</span>Spotify for Artists 신청</h3>
   <p>
     아티스트 프로필을 직접 관리할 수 있게 해주는 도구입니다.
     <strong>무료</strong>이며, 신청하지 않으면 프로필이 비어 있는 채로 남습니다.
@@ -1509,8 +2101,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch20">
-  <h3><span class="n">20</span>아티스트 프로필 세팅</h3>
+<section class="ch" id="ch22">
+  <h3><span class="n">22</span>아티스트 프로필 세팅</h3>
   <p>
     승인되면 프로필을 직접 꾸밀 수 있습니다.
     기본 상태는 <strong>회색 아이콘에 검은 배경</strong>이라, 손대지 않으면 방치된 프로필로 보입니다.
@@ -1622,8 +2214,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch21">
-  <h3><span class="n">21</span>곡 단위 통계 읽기</h3>
+<section class="ch" id="ch23">
+  <h3><span class="n">23</span>곡 단위 통계 읽기</h3>
   <p>
     Spotify for Artists에 들어가면 가장 먼저 숫자를 보게 됩니다.
     그런데 발매 당일에는 <strong>같은 화면 안에서 숫자가 서로 다르게</strong> 나옵니다.
@@ -1689,8 +2281,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch22">
-  <h3><span class="n">22</span>Canvas 만들기</h3>
+<section class="ch" id="ch24">
+  <h3><span class="n">24</span>Canvas 만들기</h3>
   <p>
     Canvas는 스포티파이 모바일 앱의 재생 화면에서 앨범 아트 대신 도는
     <strong>짧은 세로 영상 루프</strong>입니다. 이미 만든 뮤직비디오에서 잘라 쓰면 되고, 비용은 들지 않습니다.
@@ -1824,8 +2416,8 @@ at the end of each line.</p>
   <p>돈은 언제 들어오는지, 다음에 무엇을 해야 하는지, 곡이 쌓이면 어떻게 낼 것인지.</p>
 </div>
 
-<section class="ch" id="ch23">
-  <h3><span class="n">23</span>수익 구조의 이해</h3>
+<section class="ch" id="ch25">
+  <h3><span class="n">25</span>수익 구조의 이해</h3>
   <p>음원 수익은 하나가 아니라 세 갈래입니다. 자동으로 들어오는 건 첫 번째뿐입니다.</p>
 
   <div class="tw"><table>
@@ -1865,7 +2457,7 @@ at the end of each line.</p>
     70곡 × 각 200회 = 14,000회 → <strong>수익 0원</strong><br>
     7곡 × 각 2,000회 = 14,000회 → <strong>전부 수익 발생</strong>
     <br><br>
-    같은 총 재생 수인데 결과가 정반대입니다. 발매 전략에서 이 점이 가장 중요합니다. 27장 참고.
+    같은 총 재생 수인데 결과가 정반대입니다. 발매 전략에서 이 점이 가장 중요합니다. 29장 참고.
   </div>
   <p>
     1,000회는 하루 3회씩 1년입니다. 작아 보이지만 발매 첫날 한 자릿수에서 출발하는 상황에서는
@@ -1898,7 +2490,7 @@ at the end of each line.</p>
   <h4>③ UGC 수익</h4>
   <p>
     다른 사람이 내 곡을 쓴 영상에서 발생하는 광고 수익입니다.
-    Social Media Pack에 가입해야 받을 수 있고, 주의할 점이 많아 <a href="#ch26">26장</a>에서 따로 다룹니다.
+    Social Media Pack에 가입해야 받을 수 있고, 주의할 점이 많아 <a href="#ch28">28장</a>에서 따로 다룹니다.
   </p>
 
   <h4>발매의 진짜 가치</h4>
@@ -1914,8 +2506,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch24">
-  <h3><span class="n">24</span>정산과 출금</h3>
+<section class="ch" id="ch26">
+  <h3><span class="n">26</span>정산과 출금</h3>
 
   <h4>2~3개월 지연이 정상입니다</h4>
   <p>
@@ -1971,8 +2563,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch25">
-  <h3><span class="n">25</span>공식 아티스트 채널 (OAC)</h3>
+<section class="ch" id="ch27">
+  <h3><span class="n">27</span>공식 아티스트 채널 (OAC)</h3>
   <p>
     유튜브에서 내 채널을 <strong>공식 아티스트 채널</strong>로 인증받는 절차입니다.
     DistroKid 모든 요금제에 포함되어 있어 <strong>추가 비용이 없습니다.</strong>
@@ -2020,8 +2612,8 @@ at the end of each line.</p>
   </div>
 </section>
 
-<section class="ch" id="ch26">
-  <h3><span class="n">26</span>Social Media Pack 재검토</h3>
+<section class="ch" id="ch28">
+  <h3><span class="n">28</span>Social Media Pack 재검토</h3>
   <p>
     업로드 단계에서 건너뛰라고 했던 옵션입니다. 왜 그런지, 예외는 있는지 여기서 정리합니다.
   </p>
@@ -2080,8 +2672,8 @@ and not added after upload from an audio library within the platform.</pre>
   </p>
 </section>
 
-<section class="ch" id="ch27">
-  <h3><span class="n">27</span>카탈로그 발매 전략 — 싱글과 앨범</h3>
+<section class="ch" id="ch29">
+  <h3><span class="n">29</span>카탈로그 발매 전략 — 싱글과 앨범</h3>
   <p>
     곡이 쌓이면 반드시 마주치는 질문입니다. <strong>한 곡씩 싱글로 낼 것인가, 묶어서 앨범으로 낼 것인가.</strong>
     결론부터 말하면 둘 중 하나를 고르는 문제가 아닙니다. 역할이 다릅니다.
@@ -2151,12 +2743,12 @@ and not added after upload from an audio library within the platform.</pre>
     <span class="t">위험을 낮추는 조건</span>
     곡마다 뮤직비디오가 있고, 공개 이력이 있으며, 장르가 서로 다르면
     "유사 음원 대량 생산"과 정반대의 모습이 됩니다.
-    여기에 AI 고지를 정확히 하고 AI Persona를 켜지 않았다면(20장 참고),
+    여기에 AI 고지를 정확히 하고 AI Persona를 켜지 않았다면(22장 참고),
     사람이 디렉션한 작업물이라는 근거가 남습니다.
   </div>
 
   <h5>② 재생이 분산되면 전부 0원입니다</h5>
-  <p>1,000회 문턱 때문입니다. 23장에서 설명한 그대로입니다.</p>
+  <p>1,000회 문턱 때문입니다. 25장에서 설명한 그대로입니다.</p>
 
   <h5>③ 프로필이 산만해집니다</h5>
   <p>
@@ -2234,7 +2826,7 @@ and not added after upload from an audio library within the platform.</pre>
     <span class="t">첫 묶음은 "완결된 시리즈"로</span>
     서사가 이미 완성되어 있고 곡 수가 7곡을 넘는 묶음이 첫 앨범으로 가장 적합합니다.
     기획이 끝나 있으니 곡 순서만 다시 짜면 됩니다.
-    그때쯤이면 Spotify for Artists에 청취자 데이터가 쌓여 있어(21장 참고),
+    그때쯤이면 Spotify for Artists에 청취자 데이터가 쌓여 있어(23장 참고),
     <strong>다음 묶음의 방향을 숫자로 판단</strong>할 수 있습니다.
   </div>
 
@@ -2261,6 +2853,35 @@ and not added after upload from an audio library within the platform.</pre>
 <section class="ch" id="apA">
   <h3><span class="n">A</span>트러블슈팅 사전</h3>
   <p>실제로 막혔던 지점만 모았습니다. 오류 문구로 찾으세요.</p>
+
+  <h4>"Add track credits to meet Apple requirements"</h4>
+  <div class="tw"><table>
+    <tr><th>어디서</th><td>제출 직전 Validation Error</td></tr>
+    <tr><th>원인</th><td>Apple Music이 트랙당 performer 1명 + producer 1명을 요구</td></tr>
+    <tr><th>해결</th><td>Apple Music Additional requirements 섹션에서 네 칸을 채움.
+      역할은 <code>Singing &amp; vocals</code> / <code>Producer</code>, 이름은 영문 본명</td></tr>
+    <tr><th>참고</th><td><a href="#ch10">10장</a></td></tr>
+  </table></div>
+
+  <h4>"You already have an album or single titled &hellip;"</h4>
+  <div class="tw"><table>
+    <tr><th>어디서</th><td>제출 버튼을 다시 눌렀을 때</td></tr>
+    <tr><th>원인</th><td>앞선 시도가 <b>이미 제출에 성공</b>한 상태. 같은 제목을 또 올리려 해서 차단됨</td></tr>
+    <tr><th>해결</th><td>새 탭에서 My Music을 먼저 확인. 해당 곡이 있으면 작업 창을 닫으면 됨</td></tr>
+  </table></div>
+  <div class="box stop">
+    <span class="t">"다른 앨범을 먼저 삭제하라"는 안내를 따르지 마세요</span>
+    정상 제출된 릴리즈를 지우면 발매일이 초기화되고 ISRC가 꼬일 수 있습니다.
+    중복인지 확인되기 전에는 아무것도 삭제하지 마세요.
+    Validation Error가 뜨면 <b>재시도 전에 반드시 My Music을 먼저 확인</b>하는 습관을 들이세요.
+  </div>
+
+  <h4>"Please add another musician (non-AI) before removing this credit"</h4>
+  <div class="tw"><table>
+    <tr><th>어디서</th><td>크레딧 화면에서 이름을 지우려 할 때</td></tr>
+    <tr><th>원인</th><td>실연자(musician) 크레딧이 0명이 되는 것을 막는 제약</td></tr>
+    <tr><th>해결</th><td><b>추가 &rarr; 삭제</b> 순서로 뒤집으면 통과. <a href="#ch12">12장</a> 참고</td></tr>
+  </table></div>
 
   <h4>"100% uppercase letters detected"</h4>
   <div class="tw"><table>
@@ -2332,7 +2953,7 @@ and not added after upload from an audio library within the platform.</pre>
   <div class="tw"><table>
     <tr><th>어디서</th><td>DistroKid → Spotify for Artists 연결</td></tr>
     <tr><th>원인</th><td>DistroKid의 감지 시스템이 아직 스포티파이 발매를 확인하지 못함 (최대 일주일)</td></tr>
-    <tr><th>해결</th><td><code>artists.spotify.com/claim</code> 에서 직접 신청 (19장)</td></tr>
+    <tr><th>해결</th><td><code>artists.spotify.com/claim</code> 에서 직접 신청 (21장)</td></tr>
     <tr><th>참고</th><td>스포티파이 쪽에서는 이미 DistroKid 연결을 인식하고 있는 경우가 많습니다</td></tr>
   </table></div>
 
@@ -2400,16 +3021,16 @@ and not added after upload from an audio library within the platform.</pre>
   </div>
 
   <h4>곡이 많은데 전부 싱글로 내도 되나요?</h4>
-  <p>제도상 막혀 있지는 않지만 권하지 않습니다. 짧은 기간의 대량 발매는 스포티파이 스팸 필터의 탐지 패턴과 겹치고, 재생이 분산되면 1,000회 문턱에 걸려 전부 0원이 됩니다. 신곡은 싱글, 기존 곡은 테마별 묶음으로 나누세요. 27장에 자세히 정리했습니다.</p>
+  <p>제도상 막혀 있지는 않지만 권하지 않습니다. 짧은 기간의 대량 발매는 스포티파이 스팸 필터의 탐지 패턴과 겹치고, 재생이 분산되면 1,000회 문턱에 걸려 전부 0원이 됩니다. 신곡은 싱글, 기존 곡은 테마별 묶음으로 나누세요. 29장에 자세히 정리했습니다.</p>
 
   <h4>EP와 앨범은 무엇이 다른가요?</h4>
   <p>스포티파이 기준으로 4~6곡은 EP, 7곡 이상(또는 30분 초과)은 앨범입니다. EP는 프로필의 "싱글" 칸에 함께 표시되므로, 앨범 칸을 채우려면 7곡을 넘겨야 합니다.</p>
 
   <h4>Canvas는 꼭 만들어야 하나요?</h4>
-  <p>필수는 아닙니다. 다만 기존 MV에서 몇 초만 잘라내면 되고 비용이 들지 않으며, 곡당 한 번만 만들면 계속 적용됩니다. 나중에 올려도 똑같이 반영되고 교체 횟수 제한도 없으니, 여유 있을 때 하셔도 됩니다. 자세한 내용은 22장을 보세요.</p>
+  <p>필수는 아닙니다. 다만 기존 MV에서 몇 초만 잘라내면 되고 비용이 들지 않으며, 곡당 한 번만 만들면 계속 적용됩니다. 나중에 올려도 똑같이 반영되고 교체 횟수 제한도 없으니, 여유 있을 때 하셔도 됩니다. 자세한 내용은 24장을 보세요.</p>
 
   <h4>발매 당일인데 재생 수가 0으로 나옵니다</h4>
-  <p>기간 통계는 1~2일 지연됩니다. 곡 제목 아래의 <strong>All-time streams · LIVE</strong> 수치를 보세요. 그쪽이 실시간 값입니다. 21장에 자세히 정리했습니다.</p>
+  <p>기간 통계는 1~2일 지연됩니다. 곡 제목 아래의 <strong>All-time streams · LIVE</strong> 수치를 보세요. 그쪽이 실시간 값입니다. 23장에 자세히 정리했습니다.</p>
 
   <h4>가사를 등록했는데 발매일에 안 보입니다</h4>
   <p>정상입니다. 반영까지 영업일 기준 1~2주가 걸립니다. 2주가 지나도 안 보이면 형식 문제일 수 있으니 고객센터에 문의하세요.</p>
@@ -2525,7 +3146,7 @@ and not added after upload from an audio library within the platform.</pre>
     <li>발매 +2주: 스포티파이 가사 반영 확인</li>
     <li>발매 +2주: Location 탭에서 청취 국가 확인 — 유튜브와 다른 시장인지</li>
     <li>발매 +3개월: Bank에서 첫 수익 확인</li>
-    <li>다음 발매 계획: 신곡은 싱글 · 기존 곡은 테마별 묶음 (27장)</li>
+    <li>다음 발매 계획: 신곡은 싱글 · 기존 곡은 테마별 묶음 (29장)</li>
   </ul>
 
   <div class="box good">
@@ -2533,6 +3154,59 @@ and not added after upload from an audio library within the platform.</pre>
     처음이 오래 걸리는 것이 정상입니다. 계정 설정과 아티스트 프로필은 한 번만 하면 되고,
     두 번째 곡부터는 업로드에서 HyperFollow까지 한 시간이면 끝납니다.
     가사 단계에서 라틴 문자만 미리 한글로 써두면 오류도 만나지 않습니다.
+  </div>
+</section>
+<section class="ch" id="apE">
+  <h3><span class="n">E</span>두 번째 발매부터 — 1집 대조표</h3>
+  <p>
+    두 번째 곡부터는 "새로 정하는 것"보다 <b>"이전과 맞추는 것"</b>이 중요해집니다.
+    아래 항목이 어긋나면 플랫폼이 다른 아티스트 &middot; 다른 사람 &middot; 다른 녹음으로 인식합니다.
+  </p>
+
+  <h4>반드시 일치시켜야 하는 것</h4>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>확인 위치</th><th>어긋나면</th></tr>
+    <tr><td>아티스트명</td><td>업로드 첫 화면 드롭다운</td><td>새 아티스트 프로필 생성 — 곡이 흩어짐</td></tr>
+    <tr><td>크레딧 이름 철자</td><td>이전 곡 &rarr; Credits</td><td>작업자 페이지 분리</td></tr>
+    <tr><td>Record label</td><td>이전 곡 상세 화면 상단</td><td>카탈로그 일관성 저하</td></tr>
+    <tr><td>제목 표기 형식</td><td>이전 곡 제목</td><td>브랜드 인상 불일치</td></tr>
+  </table></div>
+
+  <h4>반드시 달라야 하는 것</h4>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>처리</th></tr>
+    <tr><td>ISRC</td><td>새 곡이면 <b>비워둠</b> — 자동 발급. 1집 번호를 넣으면 안 됨</td></tr>
+    <tr><td>UPC</td><td>릴리즈마다 자동으로 새로 발급됨</td></tr>
+    <tr><td>커버아트</td><td>곡마다 새로 제작</td></tr>
+  </table></div>
+
+  <h4>발매 전 대조 순서</h4>
+  <ol class="steps">
+    <li><b>이전 곡 상세 화면을 새 탭으로 열기</b>My Music &rarr; 곡 클릭.
+      작업 중인 업로드 창이 날아가지 않도록 반드시 새 탭에서 엽니다.</li>
+    <li><b>Record label 확인</b>상단 우측에 표시됩니다.</li>
+    <li><b>Credits 열어 이름 철자 확인</b>띄어쓰기와 이름&middot;성 순서까지 그대로 적어둡니다.</li>
+    <li><b>ISRC 기록</b>트랙 목록 오른쪽 회색 배지. 앞으로 묶음 발매에 쓰입니다.</li>
+    <li><b>새 곡 업로드 시 그대로 입력</b>크레딧은 <code>Import credits from another song</code>을 쓰면
+      타이핑 없이 복사됩니다.</li>
+  </ol>
+
+  <div class="box stop">
+    <span class="t">이미 발매된 곡에는 소급 적용할 수 없는 것</span>
+    오디오 파일은 교체하면 ISRC 재사용이 깨집니다. 1집에 <a href="#ch3">3장</a>의 마스터링 공정을
+    나중에 적용하고 싶어도 할 수 없습니다. <b>곡마다 발매 전에 기준을 확정</b>하고,
+    신곡부터 적용해 점진적으로 톤을 맞추는 편이 현실적입니다.
+  </div>
+
+  <h4>묶음 발매를 계획 중이라면</h4>
+  <p>
+    싱글로 낸 곡을 나중에 EP&middot;앨범에 재수록할 때는 <b>발매 당시의 그 오디오 파일과 ISRC</b>를
+    그대로 써야 재생 수가 합산됩니다. 형식 판정 기준과 전략은 <a href="#ch29">29장</a>에 있습니다.
+  </p>
+  <div class="box good">
+    <span class="t">지금부터 시트를 하나 만들어두세요</span>
+    곡명 &middot; ISRC &middot; UPC &middot; 발매일 &middot; 커버 파일명 &middot; 마스터 파일 경로.
+    곡이 열 개만 넘어가도 대시보드에서 찾는 것보다 시트를 보는 편이 훨씬 빠릅니다.
   </div>
 </section>
 
