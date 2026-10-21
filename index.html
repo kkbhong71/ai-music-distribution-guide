@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI 음원 발매 실전 가이드 v4.1 — Suno AI × DistroKid</title>
+<title>AI 음원 발매 실전 가이드 v4.2 — Suno AI × DistroKid</title>
 <meta name="description" content="Suno AI로 만든 음악을 DistroKid로 스포티파이·애플뮤직·유튜브뮤직에 발매하는 전 과정. 전체 흐름도, 발매용 마스터링, 커버아트 제작, 업로드 양식 항목별 입력값, 오류 해결, 수익 정산까지 실제 발매 2회 경험 기반 매뉴얼.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,7 +200,7 @@ footer a{color:#8FB4CE}
 <header class="hero">
   <div class="wrap">
     <p class="kicker">AI 음악 크리에이터를 위한</p>
-    <h1>음원 발매 실전 가이드<span class="ver">v4.1</span></h1>
+    <h1>음원 발매 실전 가이드<span class="ver">v4.2</span></h1>
     <p class="sub">Suno AI × DistroKid로 스트리밍 플랫폼에 내 노래 올리기</p>
     <p class="lede">
       Suno AI로 만든 음악을 DistroKid를 통해 스포티파이·애플뮤직·유튜브뮤직에 정식 발매하는 전 과정을,
@@ -216,6 +216,22 @@ footer a{color:#8FB4CE}
 
 <div class="changelog">
   <div class="wrap">
+    <h2>v4.2에서 새로 추가된 것</h2>
+    <ul>
+      <li><strong>Suno 다운로드 한도 &mdash; 기존 서술을 정정했습니다 (2 &middot; 3장)</strong>
+        "같은 곡을 다른 포맷으로 다시 받는 것은 차감되지 않는다"고 적었던 부분이 틀렸습니다.
+        <b>다시 받아도 한도가 차감됩니다.</b> 과거 곡의 WAV 재다운로드만으로 월 한도가 금방 차므로
+        묶음 발매 일정에 직접 영향을 줍니다</li>
+      <li><strong>작곡가 칸에 한글이 입력됩니다 (8장)</strong> &mdash; 한국어 화면에서는
+        "작곡가/작사가의 본명"으로 보이고 한글이 그대로 들어갑니다. 한글로 등록하면 작업자 페이지가 갈라집니다</li>
+      <li><strong>제출 직전 필수 체크박스 6개 (10장)</strong> &mdash; 항목별 뜻과,
+        <b>"비표준 대/소문자 감지"는 오류가 아니라는 것</b>. 영문 부제의 소문자 전치사 때문에 뜹니다</li>
+      <li><strong>HyperFollow의 한국어 라벨 (14장)</strong> &mdash; Embedded Video는 "동영상 아티스트"입니다.
+        "링크 &rarr; 링크 추가"에 넣으면 영상이 박히지 않습니다. Holiday cheer 주의도 추가</li>
+      <li><strong>원본이 16bit일 때 (3장)</strong> &mdash; 셸프를 걸고 24bit로 내보내면 FLAC 용량이 2배로 뜁니다.
+        16bit 출력도 발매 규격으로 유효합니다</li>
+    </ul>
+
     <h2>v4.1에서 새로 추가된 것</h2>
     <ul>
       <li><strong>플레이리스트 피칭 (25장)</strong> — 5단계 입력 항목별 작성법. 두 번째 발매작부터 쓸 수 있으며, 선정보다 Release Radar 등록이 실익입니다</li>
@@ -574,7 +590,9 @@ footer a{color:#8FB4CE}
   <div class="box care">
     <span class="t">Suno 다운로드 한도와 라이선스</span>
     2026년 9월 3일부터 Pro 월 20곡, Premier 월 60곡 제한이 적용됩니다(이전 생성곡 포함).
-    같은 곡을 다른 포맷으로 다시 받는 것은 차감되지 않으므로, MP3만 받아둔 곡의 WAV 재다운로드는 괜찮습니다.<br>
+    <b>같은 곡을 다른 포맷으로 다시 받아도 한도가 차감됩니다.</b>
+    MP3만 받아둔 곡을 발매용 WAV로 다시 받는 것도 한 곡으로 집계되므로,
+    묶음 발매는 월 한도에 맞춰 나눠 잡으세요.<br>
     <b>무료 플랜에서 만든 곡은 비상업용이라 발매할 수 없습니다.</b>
     유료 플랜 생성곡만 가능하고, 구독을 해지해도 상업 라이선스는 유지됩니다.
   </div>
@@ -607,9 +625,11 @@ footer a{color:#8FB4CE}
   <div class="box care">
     <b>다운로드 한도가 있습니다 (2026년 9월 3일부터)</b><br>
     Pro는 월 20곡, Premier는 월 60곡으로 제한됩니다. 그 이전에 만든 곡에도 적용됩니다.
-    다만 <b>같은 곡을 다른 포맷으로 다시 받는 것과 스템 다운로드는 추가 차감되지 않습니다.</b><br>
-    MV 제작 때 MP3만 받아둔 곡을 발매용 WAV로 다시 받으려는 경우가 여기 해당합니다.
-    여러 곡을 묶어 앨범을 낼 계획이라면 작업 전에 잔여 한도를 먼저 확인하세요.
+    <b>같은 곡을 다른 포맷으로 다시 받아도 한도가 차감됩니다.</b><br>
+    MV 제작 때 MP3만 받아둔 곡을 발매용 WAV로 다시 받는 경우가 여기 해당하는데,
+    이것도 새 다운로드 한 건으로 집계됩니다.
+    과거 곡을 모아 앨범을 낼 계획이라면 WAV 재다운로드만으로 한도가 금방 찹니다.
+    작업 전에 잔여 한도를 확인하고, 발매 일정을 월 단위로 나눠 잡으세요.
   </div>
 
   <div class="box stop">
@@ -755,6 +775,16 @@ footer a{color:#8FB4CE}
     <tr><td>발매용 (DistroKid 업로드)</td><td>24bit / 48kHz</td><td>디더 불필요</td></tr>
     <tr><td>영상 편집 소스 (CapCut 등)</td><td>16bit / 48kHz</td><td>TPDF 디더 적용</td></tr>
   </table></div>
+
+  <div class="box tip">
+    <span class="t">원본이 16bit라면 24bit를 고집할 필요가 없습니다</span>
+    Suno WAV는 16bit로 나오는 경우가 있습니다. 여기에 셸프를 걸어 24bit로 내보내면
+    하위 8비트가 전부 필터 반올림 잡음으로 채워져
+    <b>FLAC 용량이 2배 가까이 뜁니다</b> (실측 26MB &rarr; 50MB).
+    그 잡음은 원본의 잡음 바닥보다 한참 아래라 들리지 않습니다.<br>
+    원본이 16bit이면 디더를 적용한 <b>16bit / 48kHz 출력도 발매 규격으로 유효</b>합니다.
+    24bit는 여러 단계를 거치며 처리할 때 손실을 막는 장치이지, 그 자체가 음질은 아닙니다.
+  </div>
   <div class="box good">
     <b>마스터링은 길이와 타이밍을 바꾸지 않습니다.</b>
     음량과 음색만 달라지므로 자막 싱크나 SRT 타임스탬프에 영향이 없습니다.
@@ -1076,6 +1106,15 @@ footer a{color:#8FB4CE}
     <tr><td>Last name</td><td>영문 성</td></tr>
   </table></div>
 
+  <div class="box stop">
+    <span class="t">한국어 화면에서는 한글이 그대로 입력됩니다</span>
+    DistroKid를 한국어로 쓰면 이 칸이 <b>"작곡가/작사가의 본명"</b>으로 보이고
+    이름 &middot; 중간 이름 &middot; 성 세 칸이 나옵니다.
+    한글 입력이 막히지 않기 때문에 무심코 "광배 / 김"으로 넣기 쉽습니다.<br>
+    반드시 영문으로 넣으세요. 한글로 등록하면 이전 발매작과 <b>다른 작곡가</b>로 분리되어
+    작업자 페이지가 둘로 갈라집니다. 중간 이름 칸은 비워둡니다.
+  </div>
+
   <h4>ISRC Code</h4>
   <p>
     입력란이 하나 나오는데, <b>새 곡의 첫 발매라면 비워두세요.</b> DistroKid가 자동으로 발급합니다.
@@ -1195,6 +1234,33 @@ footer a{color:#8FB4CE}
     </ol>
   </div>
   <p>필수 체크박스 6개를 모두 체크하면 제출 버튼이 활성화됩니다.</p>
+
+  <div class="tw"><table>
+    <tr><th>체크박스</th><th>뜻</th></tr>
+    <tr><td>YouTube Music 업로드 인지</td><td>내 음원이 유튜브 뮤직에도 올라간다는 것을 알고 있다</td></tr>
+    <tr><td>비표준 대/소문자 고지</td><td>Apple이 표기를 자체 기준으로 바꿀 수 있다</td></tr>
+    <tr><td>프로모션 서비스 미사용</td><td>스트리밍 수를 늘려준다는 서비스를 쓰지 않았다</td></tr>
+    <tr><td>본인 음악이며 권리 보유</td><td>전 세계 판매 &middot; 로열티 수령 권리가 있다</td></tr>
+    <tr><td>타 아티스트명 미사용</td><td>승인 없이 다른 아티스트 이름을 쓰지 않았다</td></tr>
+    <tr><td>유통 계약서 동의</td><td>DistroKid 약관</td></tr>
+  </table></div>
+
+  <div class="box tip">
+    <span class="t">"비표준 대/소문자 사용이 감지됐습니다" &mdash; 오류가 아닙니다</span>
+    곡 제목의 영문 부제에 소문자 전치사가 들어 있으면 뜹니다.
+    "쉼이 필요한 그대에게 (A Rest for You)"의 <b>for</b> 같은 경우입니다.
+    영어 제목 표기법에서는 짧은 전치사를 소문자로 두는 것이 맞지만,
+    Apple Style Guide는 다르게 처리할 때가 있어 미리 알려주는 것입니다.<br>
+    <b>제목은 그대로 두세요.</b> 여기서 대문자로 고치면 그 곡만 다른 규칙이 되어
+    아티스트 페이지에서 제목 형식이 들쭉날쭉해집니다.
+  </div>
+
+  <div class="box stop">
+    <span class="t">세 번째 항목은 발매 후에도 유효한 약속입니다</span>
+    발매하고 나면 "스트리밍 수를 늘려주겠다"는 연락이 옵니다. 전부 거절하세요.
+    스포티파이는 가짜 재생을 감지하는 체계를 갖추고 있고, 적발되면
+    해당 곡이 내려가는 데서 끝나지 않고 계정에 제재가 갑니다.
+  </div>
 
   <h4>마스터링 업셀 화면</h4>
   <p>제출 후 마스터링을 권하는 화면이 나옵니다. <strong>"Use my originals" ($0)</strong>을 고르고 Continue를 누르세요.</p>
@@ -1549,7 +1615,24 @@ at the end of each line.</p>
     <tr><td>Social Media Buttons</td><td><code>@핸들</code>만 입력하면 자동으로 전체 URL로 변환됨</td></tr>
     <tr><td>Embedded Video</td><td><strong>뮤직비디오 URL — 가장 중요</strong></td></tr>
     <tr><td>Ad-tracking pixels</td><td>광고를 안 한다면 생략</td></tr>
+    <tr><td>Holiday cheer</td><td>체크하지 않음 &mdash; 아래 설명</td></tr>
   </table></div>
+
+  <div class="box care">
+    <span class="t">한국어 화면에서는 이름이 다릅니다</span>
+    DistroKid를 한국어로 쓰면 <b>Embedded Video</b>가 <b>"동영상 아티스트"</b>로,
+    <b>Links</b>가 <b>"링크"</b>로 나옵니다.<br>
+    "링크"의 <b>링크 추가</b>는 페이지에 버튼 하나를 만드는 기능이라 영상이 박히지 않습니다.
+    MV는 반드시 <b>"동영상 아티스트 &rarr; YouTube 동영상 추가"</b> 칸에 넣어야
+    페이지 안에서 바로 재생됩니다. 두 칸을 헷갈리면 영상이 보이지 않습니다.
+  </div>
+
+  <div class="box tip">
+    <span class="t">Holiday cheer는 체크하지 마세요</span>
+    맨 아래 "추가 설정"에 있는 이 체크박스는 <b>12월 한 달 내내</b>
+    페이지에 눈을 내리고 빨간 리본을 겁니다.
+    곡의 정서와 맞지 않으면 그대로 두세요. 커버 아트에 붉은 색이 있으면 더 지저분해집니다.
+  </div>
 
   <h4>Embedded Video가 핵심인 이유</h4>
   <div class="box stop">
@@ -3609,7 +3692,7 @@ and not added after upload from an audio library within the platform.</pre>
       문의: <a href="mailto:kkbhong71@gmail.com">kkbhong71@gmail.com</a>
     </p>
     <p style="margin-top:20px;font-size:13px;color:#6E869B">
-      v4.1 · 2026년 10월 · 작성 K.G.B. (Creative Director, 메타포뮤직)
+      v4.2 · 2026년 10월 · 작성 K.G.B. (Creative Director, 메타포뮤직)
     </p>
     <a class="totop" href="#">맨 위로</a>
   </div>
