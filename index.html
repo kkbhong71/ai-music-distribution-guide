@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI 음원 발매 실전 가이드 v4.2 — Suno AI × DistroKid</title>
+<title>AI 음원 발매 실전 가이드 v4.3 — Suno AI × DistroKid</title>
 <meta name="description" content="Suno AI로 만든 음악을 DistroKid로 스포티파이·애플뮤직·유튜브뮤직에 발매하는 전 과정. 전체 흐름도, 발매용 마스터링, 커버아트 제작, 업로드 양식 항목별 입력값, 오류 해결, 수익 정산까지 실제 발매 2회 경험 기반 매뉴얼.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,7 +200,7 @@ footer a{color:#8FB4CE}
 <header class="hero">
   <div class="wrap">
     <p class="kicker">AI 음악 크리에이터를 위한</p>
-    <h1>음원 발매 실전 가이드<span class="ver">v4.2</span></h1>
+    <h1>음원 발매 실전 가이드<span class="ver">v4.3</span></h1>
     <p class="sub">Suno AI × DistroKid로 스트리밍 플랫폼에 내 노래 올리기</p>
     <p class="lede">
       Suno AI로 만든 음악을 DistroKid를 통해 스포티파이·애플뮤직·유튜브뮤직에 정식 발매하는 전 과정을,
@@ -216,6 +216,22 @@ footer a{color:#8FB4CE}
 
 <div class="changelog">
   <div class="wrap">
+    <h2>v4.3에서 새로 추가된 것</h2>
+    <ul>
+      <li><strong>피칭이 제출됐는지 확인하는 법 (25장)</strong> &mdash; 제출을 마쳐도 화면은
+        <code>Pitch a song</code> 그대로 남아 있습니다. <b>새로고침해야</b> "Pitched …"로 바뀝니다.
+        실패한 줄 알고 두 번 제출하기 쉬운 자리입니다</li>
+      <li><strong>피칭 입력 화면이 바뀌었습니다 (25장)</strong> &mdash; 다섯 단계가 아니라
+        <b>네 화면</b>이고, 장르 &middot; 분위기 &middot; 악기 &middot; 가사 언어가 한 화면에 모여 있습니다.
+        화면 제목 기준으로 다시 썼습니다</li>
+      <li><strong>송 스타일 &middot; 분위기 선택지 전체 목록 (25장)</strong> &mdash; 각각 열 개뿐인 고정 목록입니다.
+        미리 보고 가면 화면 앞에서 헤매지 않습니다. <b>최대 2개라도 2개를 채울 의무는 없습니다</b></li>
+      <li><strong>cover / remix / recorded / instrumental 네 문항 (25장)</strong> &mdash;
+        모두 필수라 비우면 Next가 눌리지 않습니다. 이전 판에 빠져 있던 항목입니다</li>
+      <li><strong>악기에 "Strings" 항목이 없습니다 (25장)</strong> &mdash;
+        현악 편곡은 Violin과 Cello로 나눠 고릅니다</li>
+    </ul>
+
     <h2>v4.2에서 새로 추가된 것</h2>
     <ul>
       <li><strong>Suno 다운로드 한도 &mdash; 기존 서술을 정정했습니다 (2 &middot; 3장)</strong>
@@ -2610,22 +2626,33 @@ at the end of each line.</p>
     같은 화면으로 연결됩니다. 옆의 <em>Add Canvas</em>와 함께 처리하면 한 번에 끝납니다(24장).
   </div>
 
-  <h4>5단계 입력 — 항목별 작성법</h4>
+  <h4>화면별 입력 — 항목별 작성법</h4>
+  <div class="box tip">
+    <span class="t">화면은 네 개입니다 &mdash; 단계 번호에 의존하지 마세요</span>
+    이전 판에서는 "1 of 5"처럼 다섯 단계로 안내했지만, 스포티파이가 화면 구성을 바꿔
+    <b>장르 &middot; 스타일 &middot; 문화권 &middot; 분위기 &middot; 악기 &middot; 가사 언어가 한 화면으로 합쳐졌습니다.</b>
+    번호는 릴리즈 형태에 따라 달라질 수 있으니 아래 <b>화면 제목</b>을 기준으로 따라오세요.
+  </div>
 
-  <h5>1 of 5 · 곡 선택</h5>
+  <h5>화면 1 · 곡 선택</h5>
   <p>싱글이면 한 곡뿐이라 이미 선택되어 있습니다. 그대로 Next.</p>
 
-  <h5>2 of 5 · 활동 지역</h5>
+  <h5>화면 2 · 활동 지역</h5>
   <p>
+    화면 제목은 <b>"Confirm where the artist is from"</b>입니다.
     도시명을 영문으로 입력하면 자동완성이 뜹니다. 아래 "현재도 이곳에서 활동한다" 체크는 그대로 둡니다.
   </p>
   <div class="box tip">
     <span class="t">국가가 분명히 드러나게 쓰세요</span>
     에디터가 특정 지역 음악을 찾는 경우가 있고, 스포티파이에는 국가·지역 단위 플레이리스트가 운영됩니다.
-    비워두거나 엉뚱하게 넣으면 그 통로가 막힙니다. 도시가 목록에 없으면 가까운 대도시나 국가를 쓰세요.
+    비워두거나 엉뚱하게 넣으면 그 통로가 막힙니다. 도시가 목록에 없으면 가까운 대도시나 국가를 쓰세요.<br><br>
+    "서울로 넣으면 더 눈에 띄지 않을까" 싶어도 그러지 마세요. 바로 아래에
+    <em>"Next를 누르면 이 아티스트의 지역 정보를 제공할 권한이 있음에 동의하는 것"</em>이라는 문구가 붙어 있습니다.
+    지역 기반 큐레이션은 수도권이 아니어도 똑같이 걸립니다.
   </div>
 
-  <h5>3 of 5 · 장르 · 분위기 · 악기</h5>
+  <h5>화면 3 · 곡 정보 — 장르 · 스타일 · 문화권 · 분위기 · 악기</h5>
+  <p>화면 제목은 <b>"Add song details"</b>이며, 아래 항목이 <b>한 화면에 모두</b> 들어 있습니다.</p>
   <div class="tw"><table>
     <tr><th>항목</th><th>개수</th><th>작성 요령</th></tr>
     <tr><td>장르</td><td>최대 3</td><td>한국어 곡이면 <strong>K-Pop을 반드시 포함</strong> — 지역 필터로 작동합니다</td></tr>
@@ -2634,6 +2661,17 @@ at the end of each line.</p>
     <tr><td>분위기</td><td>최대 2</td><td>곡의 정서를 정확히. 아래 주의 참고</td></tr>
     <tr><td>악기</td><td>제한 없음</td><td><strong>실제로 들리는 것만</strong></td></tr>
   </table></div>
+  <div class="box tip">
+    <span class="t">송 스타일과 분위기는 고정 목록입니다 &mdash; 미리 보고 가세요</span>
+    직접 입력이 아니라 버튼을 누르는 방식이고, 목록이 생각보다 짧습니다.<br><br>
+    <b>송 스타일 (최대 2)</b> &mdash; Acoustic &middot; Ballad &middot; Beats &middot; Christmas &middot;
+    Experimental &middot; Goth &middot; Holiday &middot; Kids &middot; Traditional &middot; None of these<br><br>
+    <b>분위기 (최대 2)</b> &mdash; Chill &middot; Energetic &middot; Happy &middot; Fierce &middot;
+    Meditative &middot; Psychedelic &middot; Romantic &middot; Sad &middot; Sexy &middot; None of these<br><br>
+    "Sentimental"이나 "Warm" 같은 섬세한 단어는 없습니다.
+    <b>최대 2개지만 2개를 채울 의무는 없습니다.</b> 맞는 것이 하나뿐이면 하나만 고르세요 &mdash;
+    억지로 채운 두 번째 태그는 곡을 엉뚱하게 설명합니다.
+  </div>
   <div class="box care">
     <span class="t">분위기 태그는 가사를 확인하고 고르세요</span>
     같은 슬픈 발라드라도 <strong>Sad + Meditative</strong>(사색적·차분함)와
@@ -2645,10 +2683,26 @@ at the end of each line.</p>
   <div class="box stop">
     <span class="t">없는 악기를 넣지 마세요</span>
     에디터는 실제로 듣고 확인합니다. 설명과 다른 곡으로 한 번 인식되면 다음 피칭에도 불리합니다.
-    <strong>정확하게 좁히는 것이 넓게 거는 것보다 유리합니다.</strong>
+    <strong>정확하게 좁히는 것이 넓게 거는 것보다 유리합니다.</strong><br><br>
+    악기 목록에 <b>"Strings"라는 묶음 항목은 없습니다.</b> 현악 편곡이 들어간 곡이면
+    <b>Violin</b>과 <b>Cello</b>를 따로 고르세요. 확신이 서지 않는 악기(Electric Guitar, Synthesizer 등)는
+    넣지 말고 비워두는 편이 낫습니다.
   </div>
 
-  <h5>4 of 5 · 가사 언어</h5>
+  <h5>같은 화면 · 네 가지 예/아니오 질문</h5>
+  <div class="tw"><table>
+    <tr><th>질문</th><th>뜻</th><th>보통의 답</th></tr>
+    <tr><td>Is this a cover?</td><td>남의 곡을 다시 부른 것인가</td><td class="n">No</td></tr>
+    <tr><td>Is it a remix?</td><td>기존 곡을 리믹스한 것인가</td><td class="n">No</td></tr>
+    <tr><td>How was it recorded?</td><td>Studio = 일반 음원 / Live = 공연 실황</td><td class="n">Studio</td></tr>
+    <tr><td>Is it an instrumental?</td><td>보컬이 없는 연주곡인가</td><td class="n">No</td></tr>
+  </table></div>
+  <p>
+    네 문항 모두 <b>필수</b>라 하나라도 비우면 Next 버튼이 활성화되지 않습니다.
+    보컬이 있는 일반 발매곡은 <b>Studio</b>가 맞습니다 &mdash; Live는 관객 앞에서 연주한 실황 녹음을 뜻합니다.
+  </p>
+
+  <h5>같은 화면 맨 아래 · 가사 언어</h5>
   <p>최대 3개까지 고를 수 있지만 <strong>실제 가사의 언어만</strong> 넣습니다.</p>
   <div class="box care">
     <span class="t">영문 부제가 있어도 English를 추가하지 않습니다</span>
@@ -2657,7 +2711,7 @@ at the end of each line.</p>
     <strong>Korean 하나만</strong> 두는 쪽이 정확한 자리로 갑니다.
   </div>
 
-  <h5>5 of 5 · 곡 설명 (500자 제한)</h5>
+  <h5>화면 4 · 곡 설명 (500자 제한)</h5>
   <p>
     에디터가 실제로 읽는 유일한 텍스트입니다. <strong>영어로 쓰는 편을 권합니다</strong> —
     한국 담당 에디터에게 갈 수도 있지만 글로벌 팀을 거칠 수도 있고, 영어는 양쪽 모두 읽습니다.
@@ -2698,6 +2752,24 @@ This one started the same way.</pre>
     발매일까지 수정 가능합니다. 다만 <strong>발매 7일 이내의 수정은 Release Radar에 반영되지 않으므로</strong>,
     실질 마감은 발매 7일 전입니다. 그 전에 확정하세요.
   </div>
+
+  <h4>제출됐는지 확인하는 법</h4>
+  <div class="box stop">
+    <span class="t">제출 직후 화면은 바뀌지 않습니다 &mdash; 두 번 제출하지 마세요</span>
+    제출을 마치고 Upcoming 목록으로 돌아오면 Playlist Pitch 칸이
+    <strong>여전히 <code>Pitch a song</code> 그대로</strong> 남아 있습니다.
+    실패한 줄 알고 한 번 더 제출하기 쉬운 자리입니다.<br><br>
+    <strong>브라우저를 새로고침(F5)하세요.</strong> 제출되었다면 그 칸이 체크 표시와 함께
+    <em>"&lt;곡 제목&gt; · Pitched N minutes ago by &lt;본인 이름&gt; (Artist)"</em>로 바뀝니다.
+    화면에서 이것을 확인하는 것이 유일한 방법입니다.
+  </div>
+  <p>
+    새로고침해도 <code>Pitch a song</code>이 그대로라면 저장되지 않은 것입니다.
+    링크를 다시 눌러보면 분명해집니다 &mdash;
+    <strong>활동 지역 입력 화면부터 다시 시작되면 저장 실패</strong>,
+    입력값이 채워진 화면이 나오면 저장 성공입니다.
+    마지막 500자 설명 칸에 붙여넣고 제출 버튼을 누르지 않은 채 창을 닫으면 아무것도 남지 않습니다.
+  </p>
 
   <h4>"This Is 플레이리스트에 고정" 안내에 대해</h4>
   <p>
@@ -3692,7 +3764,7 @@ and not added after upload from an audio library within the platform.</pre>
       문의: <a href="mailto:kkbhong71@gmail.com">kkbhong71@gmail.com</a>
     </p>
     <p style="margin-top:20px;font-size:13px;color:#6E869B">
-      v4.2 · 2026년 10월 · 작성 K.G.B. (Creative Director, 메타포뮤직)
+      v4.3 · 2026년 11월 · 작성 K.G.B. (Creative Director, 메타포뮤직)
     </p>
     <a class="totop" href="#">맨 위로</a>
   </div>
