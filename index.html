@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI 음원 발매 실전 가이드 v4.3 — Suno AI × DistroKid</title>
+<title>AI 음원 발매 실전 가이드 v4.4 — Suno AI × DistroKid</title>
 <meta name="description" content="Suno AI로 만든 음악을 DistroKid로 스포티파이·애플뮤직·유튜브뮤직에 발매하는 전 과정. 전체 흐름도, 발매용 마스터링, 커버아트 제작, 업로드 양식 항목별 입력값, 오류 해결, 수익 정산까지 실제 발매 2회 경험 기반 매뉴얼.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -200,7 +200,7 @@ footer a{color:#8FB4CE}
 <header class="hero">
   <div class="wrap">
     <p class="kicker">AI 음악 크리에이터를 위한</p>
-    <h1>음원 발매 실전 가이드<span class="ver">v4.3</span></h1>
+    <h1>음원 발매 실전 가이드<span class="ver">v4.4</span></h1>
     <p class="sub">Suno AI × DistroKid로 스트리밍 플랫폼에 내 노래 올리기</p>
     <p class="lede">
       Suno AI로 만든 음악을 DistroKid를 통해 스포티파이·애플뮤직·유튜브뮤직에 정식 발매하는 전 과정을,
@@ -209,13 +209,34 @@ footer a{color:#8FB4CE}
     </p>
     <p class="by">
       작성: <strong>K.G.B.</strong> (Creative Director, 메타포뮤직)<br>
-      Oseong Vibe Coding EduHub · 2026년 10월 개정
+      Oseong Vibe Coding EduHub · 2026년 11월 개정
     </p>
   </div>
 </header>
 
 <div class="changelog">
   <div class="wrap">
+    <h2>v4.4에서 새로 추가된 것</h2>
+    <ul>
+      <li><strong>부록 F 신설 &mdash; 내 곡을 직접 측정하기</strong> &mdash;
+        3장에서 "측정이 먼저"라고만 했던 부분을, <b>REAPER + Voxengo SPAN</b>으로
+        환경을 갖추는 법부터 끝까지 풀었습니다. 설치, 오디오 장치 설정, 측정 프리셋,
+        그래프 읽는 법까지 화면 기준으로 썼습니다</li>
+      <li><strong>샘플레이트 3중 일치 (부록 F)</strong> &mdash;
+        파일 &middot; 프로젝트 &middot; 장치가 모두 48kHz여야 하는 이유와,
+        <code>[resampled]</code> 표시로 확인하는 법.
+        <b>제목 표시줄은 장치 값이지 프로젝트 값이 아닙니다</b></li>
+      <li><strong>가상 오디오 장치로 모니터링하면 안 됩니다 (부록 F)</strong> &mdash;
+        FxSound 같은 음질 향상 프로그램이 출력 장치로 잡혀 있으면
+        측정값은 멀쩡해도 <b>귀로 하는 판단이 전부 어긋납니다</b></li>
+      <li><strong>곡 간 톤 맞추기 (부록 F)</strong> &mdash;
+        묶음 발매를 앞두고 저역 비중&middot;Crest Factor를 대조해 목표 곡선을 정하는 순서.
+        <b>Crest Factor가 낮은 곡은 EQ로 못 살립니다</b></li>
+      <li><strong>함정 모음 (부록 F)</strong> &mdash;
+        SPAN의 <code>HOLD</code>는 누적이 아니라 정지 버튼이고,
+        아이템의 <code>OFFLINE</code> 표시는 고장이 아닙니다</li>
+    </ul>
+
     <h2>v4.3에서 새로 추가된 것</h2>
     <ul>
       <li><strong>피칭이 제출됐는지 확인하는 법 (25장)</strong> &mdash; 제출을 마쳐도 화면은
@@ -362,6 +383,7 @@ footer a{color:#8FB4CE}
     <li><a href="#apC"><span class="num">C</span>메타데이터 요약표</a></li>
     <li><a href="#apD"><span class="num">D</span>전체 체크리스트</a></li>
     <li><a href="#apE"><span class="num">E</span>두 번째 발매 대조표</a></li>
+    <li><a href="#apF"><span class="num">F</span>내 곡 직접 측정하기</a></li>
   </ol>
 </nav>
 
@@ -736,7 +758,8 @@ footer a{color:#8FB4CE}
   <h6 style="font-size:15px;font-weight:700;margin:20px 0 8px;color:var(--ink-soft)">판단 순서</h6>
   <ol class="steps">
     <li><b>스펙트럼으로 고역 비중을 확인</b>무료 분석 도구나 DAW의 스펙트럼 애널라이저로
-      12~16kHz 구간을 봅니다. 숫자를 못 읽겠으면 다음 단계로 바로 가도 됩니다.</li>
+      12~16kHz 구간을 봅니다. 숫자를 못 읽겠으면 다음 단계로 바로 가도 됩니다.
+      측정 환경을 처음부터 갖추는 방법은 <a href="#apF">부록 F</a>에 있습니다.</li>
     <li><b>레퍼런스와 비교해 듣기</b>같은 장르의 상업 발매곡과 번갈아 들어보세요.
       <b>답답하다 &middot; 먹먹하다</b>는 인상이 들면 보강 대상입니다.
       이 귀 판단이 숫자보다 정확할 때가 많습니다.</li>
@@ -759,6 +782,7 @@ footer a{color:#8FB4CE}
   <p>
     같은 Suno 곡이라도 생성 시기나 모델에 따라 컷오프가 다릅니다(17.8kHz와 20kHz가 섞여 나옵니다).
     여러 곡을 앨범으로 묶을 때 이 값이 들쭉날쭉하면 질감이 어긋나므로, 미리 확인해 두면 좋습니다.
+    실제로 재는 방법은 <a href="#apF">부록 F</a>에 있습니다.
   </p>
 
   <h4>⑤ 무료 마스터링 도구 — 비교해서 더 나을 때만</h4>
@@ -3747,6 +3771,459 @@ and not added after upload from an audio library within the platform.</pre>
   </div>
 </section>
 
+<section class="ch" id="apF">
+  <h3><span class="n">F</span>내 곡을 직접 측정하기</h3>
+  <p>
+    <a href="#ch3">3장</a>에서 "측정이 먼저"라고 했지만, 무엇으로 어떻게 재는지는 짧게만 다뤘습니다.
+    이 부록은 <b>측정 환경을 처음부터 갖추는 방법</b>입니다.
+    한 번 세팅해두면 앞으로 모든 곡을 스스로 판단할 수 있게 됩니다.
+  </p>
+  <div class="box tip">
+    <span class="t">이 부록이 필요한 사람</span>
+    발매만 하는 것이 목적이라면 건너뛰어도 됩니다. 3장의 표준 공정만 따라도 발매에는 지장이 없습니다.<br>
+    <b>곡이 쌓여 앨범을 묶기 시작하면</b> 이야기가 달라집니다. 곡마다 톤이 제각각인 것을
+    귀로는 "뭔가 이상한데"까지만 알 수 있는데, 그래프는 "저역이 1.7배 차이난다"를 알려줍니다.
+    고치려면 후자가 필요합니다.
+  </div>
+
+  <h4>F-1. 준비물 &mdash; 두 개면 됩니다</h4>
+
+  <h5>REAPER (DAW)</h5>
+  <div class="tw"><table>
+    <tr><th>가격</th><td><b>$60</b> (개인 또는 연 매출 $20,000 미만 소규모 상업) / $225 (그 이상)</td></tr>
+    <tr><th>평가 기간</th><td>60일 &mdash; <b>기능 제한 없음</b>. 기간이 지나도 안내 창만 뜹니다</td></tr>
+    <tr><th>업데이트</th><td>구매 버전 기준 v8.99까지 무료</td></tr>
+    <tr><th>받는 곳</th><td><code>reaper.fm</code></td></tr>
+  </table></div>
+  <p>
+    무료는 아니지만 전문 DAW 중 가장 저렴하고, <b>필요한 도구가 전부 기본 포함</b>되어 있습니다.
+    ReaEQ(셸프용 EQ), ReaLimit(True Peak 리미터), JS&nbsp;Loudness&nbsp;Meter(LUFS 미터),
+    Dry&nbsp;Run&nbsp;Render(파일을 쓰지 않고 라우드니스만 계산), 렌더 통계 HTML 리포트까지
+    별도 구매 없이 들어 있습니다.
+  </p>
+
+  <h5>Voxengo SPAN (스펙트럼 분석기)</h5>
+  <div class="tw"><table>
+    <tr><th>가격</th><td><b>무료</b> &mdash; 회원가입&middot;이메일 불필요</td></tr>
+    <tr><th>받는 곳</th><td><code>voxengo.com/product/span/</code></td></tr>
+    <tr><th>버전</th><td>3.24 (2026년 4월 기준)</td></tr>
+  </table></div>
+  <p>
+    REAPER에 없는 <b>단 하나</b>가 제대로 된 스펙트럼 분석기입니다.
+    고역이 몇 kHz에서 끊기는지, 저역이 얼마나 두꺼운지를 보려면 SPAN이 필요합니다.
+    3장에서 LUFS 측정에 쓴 Youlean Loudness Meter와 역할이 다르니 둘 다 두셔도 됩니다.
+  </p>
+  <div class="box care">
+    <span class="t">무료판과 SPAN Plus의 차이</span>
+    정지 스펙트럼 표시, 스펙트럼 가져오기&middot;내보내기, PNG 저장은 유료판(SPAN Plus) 기능입니다.
+    <b>고역 컷오프 확인과 곡의 전체 윤곽 파악은 무료판으로 충분</b>하니 먼저 무료판으로 시작하세요.
+  </div>
+
+  <h4>F-2. SPAN 설치</h4>
+
+  <ol class="steps">
+    <li><b>다운로드</b><code>voxengo.com/product/span/</code> 접속 &rarr;
+      <code>Download VST, VST3, AAX for Windows</code> 클릭.
+      바로 위에 Mac용 링크가 있으니 혼동하지 마세요.
+      파일명은 <code>VoxengoSPAN_324_Win32_64_VST_VST3_AAX_setup.exe</code>, 약 8.9MB입니다.</li>
+    <li><b>Windows 경고 통과</b>실행하면 <b>"Windows가 PC를 보호했습니다"</b>(SmartScreen) 창이 뜰 수 있습니다.
+      바이러스 경고가 아니라 소규모 개발사가 코드 서명 인증서를 붙이지 않았을 때 나오는 일반 안내입니다.
+      <code>추가 정보</code> &rarr; <code>실행</code>으로 진행합니다.</li>
+    <li><b>설치 항목 선택</b>하나의 설치 파일에 5종이 들어 있습니다.
+      <b>VST3 64비트 하나만</b> 체크하세요(아래 표 참고).</li>
+    <li><b>설치 경로는 그대로</b>VST3 기본 경로 <code>C:\Program Files\Common Files\VST3</code>는
+      Windows 표준 위치입니다. <b>임의로 바꾸면 REAPER가 못 찾습니다.</b>
+      이어서 나오는 시작 메뉴 폴더 이름(<code>Voxengo</code>)도 기본값 그대로 두면 됩니다.</li>
+    <li><b>REAPER에 인식시키기</b><code>Ctrl + P</code> &rarr; <b>Plug-ins &rarr; VST</b> &rarr;
+      <code>Re-scan...</code> &rarr; <code>Re-scan VST paths for new/modified plug-ins</code>.
+      그래도 안 보이면 <code>Clear cache and re-scan VST paths for all plug-ins</code>로 다시 시도합니다.</li>
+    <li><b>불러오기</b>트랙의 <code>FX</code> 버튼 &rarr; <code>Add</code> &rarr;
+      상단 Filter 칸에 <code>span</code> 입력 &rarr; <code>VST3: SPAN (Voxengo)</code> 더블클릭.</li>
+  </ol>
+
+  <div class="tw"><table>
+    <tr><th>설치 항목</th><th>체크</th><th>이유</th></tr>
+    <tr><td>VST for 32-bit</td><td class="n">해제</td><td>REAPER 64비트에서 못 씀</td></tr>
+    <tr><td>VST for 64-bit</td><td>선택</td><td>체크해도 되지만 플러그인 목록이 중복됨</td></tr>
+    <tr><td><b>VST3 for 64-bit</b></td><td class="y"><b>필수</b></td><td>REAPER가 쓸 포맷</td></tr>
+    <tr><td>AAX for ProTools 12+</td><td class="n">해제</td><td>Pro Tools 전용</td></tr>
+    <tr><td>User guides and license files</td><td>회색 고정</td><td>해제 불가 &mdash; 정상입니다</td></tr>
+  </table></div>
+
+  <div class="box tip">
+    <span class="t">SPAN을 어느 트랙에 올릴 것인가</span>
+    <b>Track 1</b>(파일이 올라간 트랙)에 올리면 원본 그대로를 봅니다.
+    <b>Master</b>에 올리면 마스터 체인 처리까지 거친 결과를 봅니다.<br>
+    측정이 목적이면 Track 1이 정확합니다. 나중에 셸프 효과를 비교할 때는
+    두 군데 모두 올려두면 처리 전후가 한눈에 보입니다.
+  </div>
+
+  <h4>F-3. 오디오 장치 설정</h4>
+  <p>
+    측정을 시작하기 전에 REAPER의 오디오 설정을 정리해야 합니다.
+    이걸 건너뛰면 오류가 나거나, 더 나쁘게는 <b>틀린 값을 측정하게 됩니다.</b><br>
+    <code>Ctrl + P</code> &rarr; <b>Audio &rarr; Device</b>
+  </p>
+
+  <h5>입력 채널을 끕니다</h5>
+  <p>
+    WASAPI 공유 모드는 <b>마이크(입력)와 스피커(출력)의 샘플레이트가 일치해야</b> 열립니다.
+    다르면 이런 오류가 납니다.
+  </p>
+  <div class="box stop">
+    <span class="t">WASAPI shared mode device error</span>
+    <code>input device sample rate does not match output device samplerate!</code><br>
+    마이크로 녹음하지 않고 WAV 파일만 분석한다면 <b>입력 자체가 필요 없습니다.</b>
+    <code>Input channels</code>를 <b>0</b>으로 두면 비교할 입력 샘플레이트가 사라져 오류가 해소됩니다.<br>
+    <code>Input device</code> 드롭다운에는 <code>(none)</code> 항목이 없습니다.
+    채널 수를 0으로 두는 것이 입력을 끄는 방법이고, 칸 옆에 <code>(0 to disable)</code>이라고 적혀 있습니다.
+  </div>
+
+  <h5>모드와 샘플레이트</h5>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>값</th></tr>
+    <tr><td>Audio system</td><td><code>WASAPI</code></td></tr>
+    <tr><td>Input channels</td><td><b>0</b></td></tr>
+    <tr><td>Output channels</td><td>2</td></tr>
+    <tr><td><b>Mode</b></td><td><b><code>Exclusive mode</code></b></td></tr>
+    <tr><td><b>Sample rate</b></td><td><b>48000</b></td></tr>
+    <tr><td>Preferred depth</td><td>24 bit</td></tr>
+    <tr><td>Block size</td><td>512 (기본값 유지)</td></tr>
+  </table></div>
+  <p>
+    <code>Shared mode</code>에서는 <code>Sample rate</code>와 <code>Preferred depth</code> 칸이
+    회색으로 잠깁니다. Windows가 샘플레이트를 결정하기 때문입니다.
+    <code>Exclusive mode</code>로 바꾸면 REAPER가 장치를 독점하면서 두 칸이 활성화되고,
+    48000을 직접 지정할 수 있습니다.
+  </p>
+  <div class="box care">
+    <span class="t">Exclusive mode의 대가</span>
+    REAPER 실행 중에는 유튜브 등 다른 프로그램의 소리가 나지 않습니다.
+    작업에 집중할 때만 쓰고 평소에는 <code>Shared mode</code>로 두셔도 됩니다.
+    대신 그때는 Windows 소리 설정에서 출력 장치를 <b>24비트 48000Hz</b>로 지정해야 합니다.
+  </div>
+
+  <h5>Output device &mdash; 가상 장치를 피하세요</h5>
+  <p>
+    <code>Output device</code> 드롭다운에서 <b>실제 하드웨어 장치</b>를 고르세요.
+    이름에 <b>FxSound &middot; Enhancer &middot; Voicemeeter &middot; Virtual</b> 같은 단어가 들어가면
+    가상 장치입니다. 이런 프로그램은 모든 소리에 자체 EQ&middot;베이스 부스트&middot;공간감을
+    자동으로 덧씌웁니다.
+  </p>
+  <div class="box stop">
+    <span class="t">측정값은 안전해도 귀가 속습니다</span>
+    SPAN은 REAPER 내부, 출력 단계 <b>이전</b>에 있으니 측정값 자체는 영향받지 않습니다.
+    문제는 판단입니다.<br>
+    앞으로 하실 작업은 "셸프를 걸었더니 공기감이 살아났는가"를 귀로 판단하는 일입니다.
+    그런데 가상 장치가 이미 고역을 올려놓은 상태로 듣고 있다면,
+    원본인데도 밝게 들려 <b>셸프가 불필요하다고 오판</b>하거나
+    특정 대역이 눌려 <b>과하게 보정</b>하게 됩니다.<br>
+    <b>자기가 쓴 안경 도수를 모른 채 시력검사를 하는 것</b>과 같습니다.
+    감상용 음질 향상 프로그램은 듣는 재미를 위한 것이고,
+    만드는 사람은 소리를 "좋게"가 아니라 <b>"있는 그대로"</b> 들어야 합니다.
+  </div>
+
+  <h4>F-4. 샘플레이트 3중 일치</h4>
+  <p>
+    <b>이 항목이 부록 F에서 가장 중요합니다.</b> 여기를 놓치면 지금까지의 설정이 무의미해집니다.
+  </p>
+  <p>신호가 흐르는 순서를 보면 이유가 분명해집니다.</p>
+  <div class="tw"><table>
+    <tr><th>순서</th><th>단계</th><th>비고</th></tr>
+    <tr><td>1</td><td>WAV 파일 (48kHz)</td><td>&darr; 프로젝트와 다르면 <b>여기서 변환</b></td></tr>
+    <tr><td>2</td><td>프로젝트 내부 처리</td><td>&darr;</td></tr>
+    <tr><td>3</td><td><b>SPAN</b></td><td><b>측정은 여기서 일어난다</b></td></tr>
+    <tr><td>4</td><td>마스터 &rarr; 오디오 장치</td><td>귀로 듣는 단계</td></tr>
+  </table></div>
+  <p>
+    파일이 48kHz인데 프로젝트가 44.1kHz면 SPAN에 도달하기 전에 변환이 일어납니다.
+    <b>SPAN은 원본이 아니라 변환된 신호를 보게 됩니다.</b>
+    44.1kHz의 이론적 상한(나이퀴스트 주파수)은 22,050Hz이고 그 부근에 필터가 걸리므로,
+    측정한 컷오프가 Suno가 만든 것인지 REAPER가 만든 것인지 구분할 수 없게 됩니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>어디</th><th>확인&middot;설정 방법</th></tr>
+    <tr><td><b>① 파일</b></td><td>Suno WAV는 48kHz. 파일 속성에서 확인</td></tr>
+    <tr><td><b>② 프로젝트</b></td><td><code>Alt + Enter</code> &rarr; Project Settings 탭 &rarr;
+      <code>Project sample rate</code> <b>체크박스를 켜고</b> 값 <b>48000</b></td></tr>
+    <tr><td><b>③ 장치</b></td><td>F-3에서 설정한 <code>Sample rate: 48000</code></td></tr>
+  </table></div>
+  <div class="box stop">
+    <span class="t">값만 넣고 체크박스를 안 켜면 적용되지 않습니다</span>
+    항목 설명에 <code>Hz (if unset, use hardware default)</code> &mdash;
+    "설정하지 않으면 하드웨어 기본값을 쓴다"고 적혀 있습니다.
+    48000이 칸에 들어 있어도 <b>왼쪽 네모가 비어 있으면 무시됩니다.</b>
+  </div>
+
+  <h5>확인 방법 &mdash; 두 곳을 보세요</h5>
+  <p>
+    <b>가) 트랙 아이템 아래 상태줄</b> &mdash;
+    <code>곡이름.wav [resampled] 48k [rate] 1.0</code>이면 변환 중,
+    <code>곡이름.wav [rate] 1.0</code>이면 정상입니다.
+    <b><code>[resampled]</code>가 사라지면 성공</b>입니다.
+  </p>
+  <p>
+    <b>나) 제목 표시줄</b> &mdash;
+    <code>[48kHz 24bit WAV : 0/2ch 512spls ~0.0/112ms WASAPI]</code>
+  </p>
+  <div class="box care">
+    <span class="t">두 곳은 다른 값을 보여줍니다</span>
+    제목 표시줄은 <b>장치</b> 설정이지 프로젝트 샘플레이트가 아닙니다.
+    프로젝트를 48000으로 바꿔도 제목 표시줄은 장치 값 그대로 남아 있을 수 있고,
+    반대로 장치만 바꾸면 제목 표시줄은 바뀌지만 프로젝트는 그대로일 수 있습니다.<br>
+    <b>측정 정확도를 결정하는 것은 프로젝트 쪽</b>이고, 그건 <code>[resampled]</code> 표시로 확인합니다.
+  </div>
+  <div class="box good">
+    <span class="t">그래프에서도 확인됩니다</span>
+    SPAN 그래프 오른쪽에 <b>빨간 세로선</b>이 그어집니다. 현재 샘플레이트의 나이퀴스트 주파수입니다
+    (44.1kHz &rarr; 22,050Hz / 48kHz &rarr; 24,000Hz).
+    그 오른쪽은 물리적으로 아무것도 존재할 수 없는 영역이라 SPAN이 막아둔 것입니다.<br>
+    샘플레이트를 바꾸면 이 선이 실제로 이동합니다. <b>컷오프 절벽이 이 선보다 한참 왼쪽에 있으면</b>,
+    그 절벽은 REAPER 변환이 아니라 Suno가 만든 진짜 컷오프라는 증거가 됩니다.
+  </div>
+
+  <h4>F-5. 측정 프리셋 만들기</h4>
+  <p>
+    SPAN의 기본 설정은 믹싱 중 실시간 확인용입니다. 곡 전체를 정밀하게 재려면 설정을 바꿔야 합니다.
+    오른쪽 위 <code>Mode</code> 옆 <b>톱니바퀴</b>를 클릭하면 <code>Spectrum Mode Editor</code>가 열립니다.
+  </p>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>기본값</th><th>바꿀 값</th><th>이유</th></tr>
+    <tr><td><b>Block Size</b></td><td>4096</td><td><b>16384</b></td>
+      <td>FFT 분석 창 크기. 클수록 주파수 해상도가 올라감(11.7Hz &rarr; 2.9Hz 간격).
+      컷오프처럼 수직에 가까운 모서리를 읽으려면 필수</td></tr>
+    <tr><td><b>Avg Time</b></td><td>1000</td><td><b>5000</b></td>
+      <td>평균을 내는 시간(ms). 1초는 짧아 그래프가 계속 출렁임</td></tr>
+    <tr><td>Freq Lo</td><td>20.0</td><td>20.0 유지</td><td>가청 하한</td></tr>
+    <tr><td><b>Freq Hi</b></td><td>20.0k</td><td><b>24000</b></td>
+      <td>48kHz 파일의 상한은 24,000Hz. <b>20k로 두면 20,051Hz 컷오프가 화면 바깥</b></td></tr>
+    <tr><td><b>Range Lo</b></td><td>-78.0</td><td><b>-100.0</b></td>
+      <td>세로축 하한. -78에서는 절벽 아래 바닥이 잘려 깊이를 알 수 없음</td></tr>
+    <tr><td>Range Hi</td><td>-18.0</td><td>유지</td><td>&nbsp;</td></tr>
+    <tr><td>Slope</td><td>4.50</td><td><b>유지</b></td>
+      <td>음악이 대략 수평으로 보이게 화면을 기울이는 보정값. 업계 표준</td></tr>
+    <tr><td>Smooth</td><td>OFF</td><td><b>OFF 유지</b></td>
+      <td><b>켜지 마세요.</b> 곡선을 매끈하게 만드는 대신 절벽 모서리가 뭉개집니다</td></tr>
+  </table></div>
+  <div class="box tip">
+    <span class="t">값 입력 요령</span>
+    노브를 드래그하면 미세조정이 어렵습니다. <b>노브 아래 숫자 칸을 더블클릭</b>하면
+    직접 타이핑할 수 있습니다.
+  </div>
+  <div class="box care">
+    <span class="t">Freq Lo와 Freq Hi를 반대로 넣기 쉽습니다</span>
+    두 노브가 나란히 있습니다. <code>Freq Lo</code>는 왼쪽(저역 시작),
+    <code>Freq Hi</code>는 그 옆(고역 끝)입니다.
+    잘못 넣으면 가로축이 <code>24</code>에서 시작하는데, 저역 시작점이 바뀐 것이라 눈에 잘 안 띕니다.
+    <b>가로축 맨 왼쪽 숫자가 20인지</b> 확인하세요.
+  </div>
+
+  <h5>프리셋으로 저장하기</h5>
+  <ol class="steps">
+    <li><b>프리셋 창 열기</b>SPAN 상단 <code>Presets</code> 클릭 &rarr; <code>Spectrum Mode Presets</code></li>
+    <li><b>이름 입력</b><code>+</code> 버튼 &rarr; 이름 입력 &rarr; <code>Enter</code>.
+      이름은 <b>영문</b>을 권합니다 &mdash; 플러그인 UI는 자체 폰트를 써서 한글이 깨지는 경우가 있습니다.
+      <code>MEASURE 24</code> 정도면 충분합니다.</li>
+    <li><b>Update 클릭</b>이걸 빠뜨리면 <b>현재 노브 값이 저장되지 않습니다.</b>
+      나중에 불러올 때마다 엉뚱한 값이 되살아납니다.</li>
+  </ol>
+  <div class="box tip">
+    <span class="t">버튼 역할</span>
+    <code>+</code> 새로 저장 &middot; <code>Update</code> 현재 설정으로 덮어쓰기 &middot;
+    <code>Activate</code> 선택한 프리셋 적용 &middot; <code>&minus;</code> 삭제<br>
+    프리셋을 불러온 뒤 노브를 하나라도 건드리면 <code>Mode</code>가 <code>USER</code>로 바뀝니다.
+    고장이 아니라 "프리셋에서 벗어난 상태"라는 표시이며, <code>Activate</code>로 되돌립니다.
+  </div>
+
+  <h4>F-6. 측정 절차</h4>
+  <p>프리셋까지 만들었으면 실제 측정은 5분이면 끝납니다.</p>
+  <ol class="steps">
+    <li><b>파일 올리기</b>WAV를 REAPER 가운데 빈 영역으로 드래그 앤 드롭. 트랙이 자동 생성됩니다.</li>
+    <li><b><code>[resampled]</code> 확인</b>아이템 아래 상태줄에 이 표시가 없어야 합니다.
+      있으면 F-4로 돌아가세요.</li>
+    <li><b>맨 앞으로</b><code>Home</code> 키.</li>
+    <li><b>HOLD가 꺼져 있는지 확인</b>켜져 있으면 한 번 눌러 해제합니다. 이유는 F-8에 있습니다.</li>
+    <li><b>Statistics 초기화</b>하단 <code>Reset</code> 버튼.
+      이전 재생에서 쌓인 값이 남아 있으면 True Peak가 부정확해집니다.</li>
+    <li><b>전곡 재생</b><code>Space</code>. <b>끝까지 돌립니다.</b>
+      Avg Time 5000ms라 평균이 쌓이는 데 시간이 필요하고,
+      True Peak는 전곡을 훑어야 최대값이 잡힙니다.</li>
+    <li><b>HOLD로 고정</b>곡이 끝나갈 무렵 <code>HOLD</code> 클릭.
+      화면이 얼어붙어 천천히 읽을 수 있습니다.</li>
+    <li><b>기록</b>곡명 &middot; RMS &middot; Max Crest Factor &middot; True Peak &middot; 컷오프.
+      곡마다 이 다섯 가지를 적어두면 나중에 비교할 수 있습니다.</li>
+  </ol>
+  <div class="box tip">
+    <span class="t">컷오프 읽는 법</span>
+    그래프 오른쪽에서 녹색 덩어리가 수직으로 떨어지는 모서리에 마우스를 올리면
+    왼쪽 위에 <code>17.6K HZ &nbsp; C#10 -14 CENTS &nbsp; -70.5 DB</code> 같은 값이 뜹니다.
+    맨 앞의 <code>HZ</code>가 컷오프입니다.<br>
+    모서리를 정확히 짚기 어려우면 <b><code>Freq Lo</code>를 15000</b>으로 바꿔보세요.
+    15kHz~24kHz만 화면 전체에 펼쳐져 절벽이 크게 확대됩니다.
+    이때 <b><code>Update</code>는 누르지 말고</b>, 읽기가 끝나면 프리셋을 <code>Activate</code>해서 되돌립니다.
+  </div>
+
+  <h4>F-7. 그래프 읽는 법</h4>
+
+  <h5>가로축 &mdash; 대역별 의미</h5>
+  <div class="tw"><table>
+    <tr><th>구간</th><th>무엇이 보이나</th><th>참고</th></tr>
+    <tr><td>20~60Hz</td><td>초저역&middot;럼블</td><td>30Hz 아래로 급격히 떨어지면 정리된 상태</td></tr>
+    <tr><td><b>60~250Hz</b></td><td>베이스&middot;킥의 몸통</td><td>곡 간 편차가 가장 크게 나는 구간</td></tr>
+    <tr><td>250Hz~1kHz</td><td>보컬&middot;악기의 기본음</td><td>봉우리가 가장 많음</td></tr>
+    <tr><td>1~5kHz</td><td>보컬 또렷함&middot;존재감</td><td>&nbsp;</td></tr>
+    <tr><td>5~10kHz</td><td>심벌&middot;자음</td><td>&nbsp;</td></tr>
+    <tr><td><b>12~16kHz</b></td><td>공기감(Air)</td><td><a href="#ch3">3장</a> 2단계 셸프의 대상 대역</td></tr>
+    <tr><td>17~20kHz</td><td>컷오프 절벽</td><td>Suno 손실 압축의 흔적</td></tr>
+  </table></div>
+
+  <h5>Statistics 네 가지</h5>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>의미</th><th>판단</th></tr>
+    <tr><td>RMS</td><td>평균 에너지</td><td>좌우 차이가 0.5dB 이내면 밸런스 양호</td></tr>
+    <tr><td><b>Max Crest Factor</b></td><td>순간 최대값과 평균의 거리</td>
+      <td><b>높을수록 생생함.</b> 3장의 PLR과 같은 성격의 지표</td></tr>
+    <tr><td>True Peak Clippings</td><td>0dBFS를 넘은 횟수</td><td class="y">반드시 0</td></tr>
+    <tr><td>True Peak</td><td>순간 최대 레벨</td><td>-1.0 dBTP 이하면 안전</td></tr>
+  </table></div>
+
+  <div class="box care">
+    <span class="t">RMS와 LUFS는 다른 척도입니다</span>
+    SPAN이 <b>-17.7 RMS</b>를 보여주는데 Youlean은 <b>-14.2 LUFS</b>라고 나올 수 있습니다. 틀린 게 아닙니다.<br>
+    <b>RMS</b>는 신호의 물리적 평균 에너지이고,
+    <b>LUFS</b>는 사람 귀의 주파수 민감도(K-가중)를 반영하고 조용한 구간을 제외합니다.
+    보통 음악에서 LUFS가 RMS보다 3~4dB 높게 나오므로,
+    이 정도 차이는 <b>두 값이 서로를 검증해 주는 관계</b>입니다.<br>
+    SPAN 하단 <code>Metering</code> 옆 <code>DBFS</code> 버튼을 클릭하면
+    <b>EBU R128(LUFS)</b>이나 K-System으로 전환됩니다.
+  </div>
+
+  <h5>실측 예시 &mdash; 같은 채널의 두 곡</h5>
+  <div class="tw"><table>
+    <tr><th>항목</th><th>A곡</th><th>B곡</th></tr>
+    <tr><td>RMS (L/R)</td><td>-17.7 / -17.5</td><td>-17.2 / -17.2</td></tr>
+    <tr><td><b>Max Crest Factor</b></td><td><b>9.7 / 8.1</b></td><td><b>12.7 / 12.8</b></td></tr>
+    <tr><td>True Peak</td><td>-3.9 / -4.2</td><td>-4.3 / -4.3</td></tr>
+    <tr><td>고역 컷오프</td><td>약 17.8kHz</td><td>약 20.0kHz</td></tr>
+    <tr><td>저역(60~250Hz) 비중</td><td>21.5%</td><td>37.3%</td></tr>
+  </table></div>
+  <p>읽어내야 할 것은 세 가지입니다.</p>
+  <ol class="steps">
+    <li><b>Crest Factor가 3dB 이상 차이납니다</b>B곡이 훨씬 생생합니다.
+      드럼과 보컬이 평균 위로 더 높이 솟습니다.</li>
+    <li><b>A곡은 좌우가 비대칭입니다</b>9.7 / 8.1로 1.6dB 차이.
+      오른쪽 채널에 더 눌린 요소가 있다는 뜻이며,
+      생성 단계에서 생긴 특성이라 후처리로 바로잡기 어렵습니다.</li>
+    <li><b>B곡은 셸프를 걸지 않았는데도 고역이 넓습니다</b>셸프를 건 A곡보다 2.2kHz 넓습니다.
+      <b>후처리로 얻은 개선폭보다 테이크 자체의 품질 차이가 더 컸다</b>는 뜻입니다.</li>
+  </ol>
+  <div class="box care">
+    <span class="t">두 곡의 결과일 뿐입니다</span>
+    위 수치는 특정 모델&middot;버전&middot;장르에서 나온 두 곡의 값입니다.
+    <a href="#ch3">3장</a>에서도 밝혔듯 표본이 적어 일반화할 수 없습니다.
+    <b>읽는 방법을 보여주는 예시</b>로만 쓰시고, 판단은 본인 곡을 직접 재서 하세요.
+  </div>
+
+  <h4>F-8. 함정 모음</h4>
+  <p>설치 방법은 검색하면 나옵니다. 직접 겪어야만 아는 것들을 모았습니다.</p>
+
+  <div class="box stop">
+    <span class="t">HOLD는 '누적'이 아니라 '정지' 버튼입니다</span>
+    최대값을 쌓아주는 버튼이 아니라 <b>화면을 그 자리에 얼립니다.</b>
+    재생 <b>전</b>에 누르면 빈 화면이 얼어붙어, 소리가 나는데도 그래프가 전혀 안 그려집니다.
+    플러그인이 고장난 줄 알기 쉽습니다.
+    <b>올바른 사용 시점은 곡이 끝난 뒤</b>, 읽고 싶은 순간입니다.
+  </div>
+
+  <div class="box care">
+    <span class="t">아이템에 OFFLINE이 뜨는 것은 고장이 아닙니다</span>
+    REAPER에서 다른 프로그램으로 전환하면 미디어 아이템에 <code>OFFLINE</code> 글자가 깔리고
+    제목 표시줄에 <code>[audio device closed]</code>가 뜹니다.
+    비활성 상태일 때 오디오 장치와 파일 핸들을 양보하는 기본 동작이며,
+    <b>REAPER 창을 다시 클릭하면 자동 복구</b>됩니다.<br>
+    거슬리면 <b>Options</b> 메뉴의 <code>Media offline when inactive</code>와
+    Audio &rarr; Device의 <code>Close audio device when stopped and application is inactive</code>를
+    해제하면 됩니다.
+  </div>
+
+  <div class="box tip">
+    <span class="t">측정은 '결정을 바꿀 만큼만' 정밀하면 됩니다</span>
+    컷오프를 재다 보면 17,570Hz인지 17,801Hz인지 소수점을 쫓게 됩니다. 그럴 필요 없습니다.<br>
+    측정의 목적은 "셸프를 몇 kHz에 걸 것인가"를 정하는 것이었습니다.
+    컷오프가 17.3kHz든 17.8kHz든 <b>답은 똑같이 10kHz</b>입니다.
+    결정이 바뀌지 않는 정밀도는 시간 낭비입니다.
+  </div>
+
+  <div class="box good">
+    <span class="t">같은 값이 나오는 것도 결과입니다</span>
+    44.1kHz 변환 상태와 48kHz 정상 상태에서 잰 값이 소수점까지 동일하게 나오는 경우가 있습니다.
+    이상한 게 아니라 <b>결론</b>입니다. 곡의 모든 성분이 17.8kHz 아래에 있는데
+    44.1kHz 변환이 손대는 영역은 22kHz 위이므로, <b>손댈 것이 애초에 없었던</b> 것입니다.<br>
+    원칙적으로 맞는 경고라도 실제 영향은 실험으로 확인해야 합니다.
+    이게 측정의 효용입니다 &mdash; 추측을 사실로 바꿔줍니다.
+  </div>
+
+  <h4>F-9. 측정값으로 곡 간 톤 맞추기</h4>
+  <p>
+    측정 환경을 갖추는 진짜 이유는 한 곡을 잘 만들기 위해서가 아니라
+    <b>여러 곡의 톤을 맞추기 위해서</b>입니다.
+    <a href="#ch30">30장</a>의 묶음 발매를 계획하고 있다면 여기가 본론입니다.
+  </p>
+  <p>
+    위 실측 예시에서 저역 비중이 <b>21.5% 대 37.3%</b>로 1.7배 차이났습니다.
+    한 곡씩 들으면 둘 다 괜찮습니다. 문제는 <b>연속 재생될 때</b>입니다.
+    청자는 "음질이 나쁘다"가 아니라 <b>"뭔가 일관성이 없다"</b>고 느낍니다.
+  </p>
+
+  <h5>작업 순서</h5>
+  <ol class="steps">
+    <li><b>묶을 곡을 전부 측정</b>곡당 5분. 곡명 &middot; RMS &middot; Crest Factor &middot;
+      True Peak &middot; 컷오프 &middot; 저역 인상을 표로 정리합니다.</li>
+    <li><b>목표 곡선을 정함</b>가장 균형 잡힌 곡을 기준으로 삼거나 중간값을 목표로 합니다.
+      저역 비중은 <b>25~30%</b> 사이가 무난합니다.</li>
+    <li><b>ReaEQ 로우셸프로 좁힘</b>저역 과다면 <code>150Hz / Q=0.707 / -1~2dB</code>,
+      부족하면 <code>+1~2dB</code>. <b>&plusmn;3dB를 넘기지 마세요.</b>
+      그 이상 필요하다는 것은 EQ로 해결할 문제가 아니라
+      <b>테이크를 다시 뽑아야 한다는 신호</b>입니다.</li>
+    <li><b>레퍼런스와 대조</b>같은 장르의 상업 발매곡을 같은 프리셋으로 재서 비교합니다.
+      200~400Hz가 높으면 탁하게 들리는 원인이고, 5~8kHz가 낮으면 보컬 또렷함이 부족합니다.
+      <b>레퍼런스는 비교용으로만 쓰고 어떤 형태로도 발매물에 포함시키지 않습니다.</b></li>
+  </ol>
+
+  <div class="box care">
+    <span class="t">Crest Factor가 낮은 곡은 EQ로 못 살립니다</span>
+    9 이하로 떨어지는 곡은 <b>눌려 있는 테이크</b>입니다.
+    EQ는 주파수 균형만 바꿀 뿐 눌린 다이내믹을 되돌리지 못합니다.
+    앨범에서 빼거나, 가능하다면 다시 생성하는 편이 낫습니다.<br>
+    <b>"초기작은 과감히 제외, 곡 수보다 품질"</b>이라는 판단에 이제 수치 근거가 생긴 셈입니다.
+  </div>
+
+  <h5>하지 말아야 할 것</h5>
+  <div class="tw"><table>
+    <tr><th>하지 말 것</th><th>이유</th></tr>
+    <tr><td>18kHz 이상 부스트</td><td>데이터가 없음. 노이즈만 올라감 (<a href="#ch3">3장</a>)</td></tr>
+    <tr><td>업샘플링 (48 &rarr; 96kHz)</td><td>없는 정보가 생기지 않음. 파일만 커짐</td></tr>
+    <tr><td>"복원" 플러그인 구매</td><td>손실 압축 아티팩트는 제거 불가</td></tr>
+    <tr><td>라우드니스 경쟁</td><td>이미 -14 LUFS. 더 올리면 플랫폼이 되돌림</td></tr>
+    <tr><td>과도한 컴프레션</td><td>Crest Factor가 건강한 곡을 깎는 것은 손해</td></tr>
+    <tr><td>발매작 소급 수정</td><td>ISRC가 잠겨 있음 (<a href="#apE">부록 E</a>)</td></tr>
+  </table></div>
+  <p>
+    True Peak가 -3.9 dBTP면 헤드룸이 4dB 가까이 남아 있어 올리고 싶은 유혹이 생깁니다.
+    하지만 스포티파이&middot;유튜브가 어차피 -14 LUFS로 맞춥니다.
+    <b>올려봐야 플랫폼이 다시 내리고, 그 과정에서 다이내믹만 잃습니다.</b>
+  </p>
+
+  <div class="box good">
+    <span class="t">가장 큰 레버는 후처리가 아닙니다</span>
+    위 실측에서 확인됐듯, <b>처리를 더 한 곡이 아니라 원재료가 좋았던 곡이 이겼습니다.</b>
+    같은 프롬프트로 여러 번 생성해 고르는 것, Exclude Styles로 리버브를 미리 막는 것,
+    <a href="#ch3">3장</a>의 Remaster를 <code>Subtle + Natural</code>로 신중히 쓰는 것 &mdash;
+    이쪽의 개선폭이 EQ보다 훨씬 큽니다.<br>
+    측정은 <b>그 판단을 눈으로 확인시켜 주는 도구</b>이지, 측정 자체가 음질을 올리지는 않습니다.
+  </div>
+</section>
+
 </main>
 </div>
 </div>
@@ -3764,7 +4241,7 @@ and not added after upload from an audio library within the platform.</pre>
       문의: <a href="mailto:kkbhong71@gmail.com">kkbhong71@gmail.com</a>
     </p>
     <p style="margin-top:20px;font-size:13px;color:#6E869B">
-      v4.3 · 2026년 11월 · 작성 K.G.B. (Creative Director, 메타포뮤직)
+      v4.4 · 2026년 11월 · 작성 K.G.B. (Creative Director, 메타포뮤직)
     </p>
     <a class="totop" href="#">맨 위로</a>
   </div>
